@@ -9,6 +9,7 @@
 
 const CONFIG = {
     aspirantes: [
+        { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Carolina' },
         { num: '405', name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina' },
         { num: '406', name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos' },
         { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon' },
@@ -25,10 +26,13 @@ const CONFIG = {
         { num: '420', name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza' },
         { num: '421', name: 'DAMON', full: 'Asp. Of. Damon' },
         { num: '422', name: 'GOMES', full: 'Asp. Of. Gomes' },
+        { num: '423', name: 'TEIXEIRA', full: 'Asp. Of. Teixeira' },
         { num: '424', name: 'EMERSON', full: 'Asp. Of. Emerson' },
         { num: '425', name: 'HENRIQUE COSTA', full: 'Asp. Of. Henrique Costa' },
+        { num: '426', name: 'TAINAM', full: 'Asp. Of. Tainam' },
         { num: '427', name: 'LUÍS CÉSAR', full: 'Asp. Of. Luís César' },
         { num: '429', name: 'JULIANA COELHO', full: 'Asp. Of. Juliana Coelho' },
+        { num: '430', name: 'RAFAELA', full: 'Asp. Of. Rafaela' },
         { num: '431', name: 'LUCAS CUNHA', full: 'Asp. Of. Lucas Cunha' },
         { num: '432', name: 'JULYENE', full: 'Asp. Of. Julyene' },
         { num: '433', name: 'BRENO', full: 'Asp. Of. Breno' },
