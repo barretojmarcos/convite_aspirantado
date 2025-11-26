@@ -346,43 +346,10 @@ const Animations = {
     },
     
     setupStagger() {
-        const animateCards = () => {
-            const grid = document.getElementById('aspirantes-grid');
-            const cards = grid?.querySelectorAll('.aspirante-card');
-            
-            if (grid && cards && cards.length > 0) {
-                // Limpar animações anteriores se existirem
-                gsap.killTweensOf(cards);
-                
-                gsap.from(cards, {
-                    scrollTrigger: {
-                        trigger: grid,
-                        start: 'top 85%',
-                        refreshPriority: -1,
-                        invalidateOnRefresh: true
-                    },
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.6,
-                    stagger: 0.05,
-                    ease: 'power1.out'
-                });
-                return true;
-            }
-            return false;
-        };
-        
-        // Tentar animar imediatamente (pode não funcionar se os cards ainda não foram renderizados)
-        setTimeout(() => {
-            if (!animateCards()) {
-                // Se não encontrou os cards, tentar novamente após um delay
-                setTimeout(animateCards, 100);
-            }
-        }, 100);
-        
-        // Escutar quando os cards forem renderizados
+        // Animação de stagger removida para os cards dos aspirantes
+        // Os cards agora aparecem sem efeito de fade
         window.aspirantesRendered = () => {
-            setTimeout(animateCards, 50);
+            // Não fazer nada - cards aparecem diretamente sem animação
         };
     },
     
