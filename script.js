@@ -9,7 +9,7 @@
 
 const CONFIG = {
     aspirantes: [
-        { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Carolina' },
+        { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Tavares' },
         { num: '405', name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina' },
         { num: '406', name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos' },
         { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon' },
@@ -219,9 +219,13 @@ const Aspirantes = {
         
         // Aguardar um frame para garantir que o DOM está atualizado
         requestAnimationFrame(() => {
-            CONFIG.aspirantes.forEach(asp => {
+            console.log(`Iniciando renderização de ${CONFIG.aspirantes.length} aspirantes`);
+            
+            CONFIG.aspirantes.forEach((asp, index) => {
                 const card = document.createElement('div');
                 card.className = 'aspirante-card';
+                card.setAttribute('data-num', asp.num);
+                card.setAttribute('data-index', index);
                 card.innerHTML = `
                     <div class="aspirante-card__badge">
                         <span class="aspirante-card__badge-label">Cad</span>
@@ -231,10 +235,16 @@ const Aspirantes = {
                     <p class="aspirante-card__title">Aspirante a Oficial</p>
                 `;
                 grid.appendChild(card);
+                console.log(`✓ Card criado: ${asp.num} - ${asp.name}`);
             });
             
             grid.classList.remove('loading');
-            console.log(`✓ Renderizados ${CONFIG.aspirantes.length} aspirantes`);
+            const cardsCriados = grid.querySelectorAll('.aspirante-card').length;
+            console.log(`✓ Total renderizado: ${cardsCriados} cards de ${CONFIG.aspirantes.length} aspirantes`);
+            
+            if (cardsCriados !== CONFIG.aspirantes.length) {
+                console.warn(`⚠️ Discrepância: ${cardsCriados} cards criados, mas ${CONFIG.aspirantes.length} aspirantes na lista`);
+            }
             
             // Notificar que a renderização foi concluída para animações
             if (window.aspirantesRendered) {
