@@ -9,38 +9,75 @@
 
 const CONFIG = {
     aspirantes: [
-        { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Tavares' },
-        { num: '405', name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina' },
-        { num: '406', name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos' },
-        { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon' },
-        { num: '408', name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges' },
-        { num: '409', name: 'DIONE', full: 'Asp. Of. Dione' },
-        { num: '410', name: 'MOREIRA', full: 'Asp. Of. Moreira' },
-        { num: '412', name: 'BARRETO', full: 'Asp. Of. Barreto' },
-        { num: '413', name: 'IURY SOUSA', full: 'Asp. Of. Iury Sousa' },
-        { num: '414', name: 'DANIEL PEDRO', full: 'Asp. Of. Daniel Pedro' },
-        { num: '415', name: 'AMORIM', full: 'Asp. Of. Amorim' },
-        { num: '417', name: 'GUSTAVO', full: 'Asp. Of. Gustavo' },
-        { num: '418', name: 'PRADO', full: 'Asp. Of. Prado' },
-        { num: '419', name: 'PIETRO', full: 'Asp. Of. Pietro' },
-        { num: '420', name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza' },
-        { num: '421', name: 'DAMON', full: 'Asp. Of. Damon' },
-        { num: '422', name: 'GOMES', full: 'Asp. Of. Gomes' },
-        { num: '423', name: 'TEIXEIRA', full: 'Asp. Of. Teixeira' },
-        { num: '424', name: 'EMERSON', full: 'Asp. Of. Emerson' },
-        { num: '425', name: 'HENRIQUE COSTA', full: 'Asp. Of. Henrique Costa' },
-        { num: '426', name: 'TAINAM', full: 'Asp. Of. Tainam' },
+        { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Tavares' ,
+            description: 'Manda a sua descricão'},
+        { num: '405', name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina' ,
+            description: 'Manda a sua descricão'},
+        { num: '406', name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos' ,
+            description: 'Manda a sua descricão'},
+        { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon' ,
+            description: 'Manda a sua descricão'},
+        { num: '408', name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges' ,
+            description: 'Manda a sua descricão'},
+        { num: '409', name: 'DIONE', full: 'Asp. Of. Dione' ,
+            description: 'Manda a sua descricão'},
+        { num: '410', name: 'MOREIRA', full: 'Asp. Of. Moreira' ,
+            description: 'Manda a sua descricão'},
+        { num: '412', name: 'BARRETO', full: 'Asp. Of. Barreto' ,
+            description: 'Manda a sua descricão'},
+        { 
+            num: '413', 
+            name: 'IURY SOUSA', 
+            full: 'Asp. Of. Iury Sousa',
+            description: 'Cadete Iury Sousa, 24 anos, nascido em São Luís. Ser Bombeiro é uma grande satisfação, pois a missão de salvar vidas é a mais nobre forma de servir ao próximo, transformando momentos de aflição em esperança.'
+        },
+        { num: '414', name: 'DANIEL PEDRO', full: 'Asp. Of. Daniel Pedro',
+            description: 'Manda a sua descricão'
+        },
+        { num: '415', name: 'AMORIM', full: 'Asp. Of. Amorim' ,
+            description: 'Cadete Amorim: Nascido em São Luís, 27 anos, graduado em Engenharia Elétrica pela Universidade Federal do Maranhão'},
+        { num: '416', name: 'PAULA GADANHO', full: 'Asp. Of. Paula Almeida' },
+        { num: '417', name: 'GUSTAVO', full: 'Asp. Of. Gustavo' ,
+            description: 'Cadete Gustavo, 30 anos, nascido em São Luís. Fazer parte do Corpo de Bombeiros é uma grande satisfação, haja vista a credibilidade que a instituição possui perante toda a sociedade.'},
+        { num: '418', name: 'PRADO', full: 'Asp. Of. Prado' ,
+            description: 'Manda a sua descricão'},
+        { num: '419', name: 'PIETRO', full: 'Asp. Of. Pietro' ,
+            description: 'Manda a sua descricão'},
+        { num: '420', name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza',
+            description: 'Manda a sua descricão' },
+        { num: '421', name: 'DAMON', full: 'Asp. Of. Damon' ,
+            description: 'Manda a sua descricão'},
+        { num: '422', name: 'GOMES', full: 'Asp. Of. Gomes' ,
+            description: 'Manda a sua descricão'},
+        { num: '423', name: 'TEIXEIRA', full: 'Asp. Of. Teixeira' ,
+            description: 'Manda a sua descricão'},
+        { num: '424', name: 'EMERSON', full: 'Asp. Of. Emerson' ,
+            description: 'Manda a sua descricão'},
+        { num: '425', name: 'HENRIQUE COSTA', full: 'Asp. Of. Henrique Costa' ,
+            description: 'Manda a sua descricão'},
+        { num: '426', name: 'TAINAM', full: 'Asp. Of. Tainam' ,
+            description: 'Manda a sua descricão'},
         { num: '427', name: 'LUÍS CÉSAR', full: 'Asp. Of. Luís César' },
-        { num: '429', name: 'JULIANA COELHO', full: 'Asp. Of. Juliana Coelho' },
-        { num: '430', name: 'RAFAELA', full: 'Asp. Of. Rafaela' },
-        { num: '431', name: 'LUCAS CUNHA', full: 'Asp. Of. Lucas Cunha' },
-        { num: '432', name: 'JULYENE', full: 'Asp. Of. Julyene' },
-        { num: '433', name: 'BRENO', full: 'Asp. Of. Breno' },
-        { num: '434', name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira' },
-        { num: '435', name: 'FALCÃO', full: 'Asp. Of. Falcão' },
-        { num: '436', name: 'WELLISON', full: 'Asp. Of. Wellison' },
-        { num: '437', name: 'RODOVALHO', full: 'Asp. Of. Rodovalho' },
-        { num: '438', name: 'RONALD', full: 'Asp. Of. Ronald' },
+        { num: '429', name: 'JULIANA COELHO', full: 'Asp. Of. Juliana Coelho' ,
+            description: 'Manda a sua descricão'},
+        { num: '430', name: 'RAFAELA', full: 'Asp. Of. Rafaela' ,
+            description: 'Manda a sua descricão'},
+        { num: '431', name: 'LUCAS CUNHA', full: 'Asp. Of. Lucas Cunha' ,
+            description: 'Manda a sua descricão'},
+        { num: '432', name: 'JULYENE', full: 'Asp. Of. Julyene' ,
+            description: 'Manda a sua descricão'},
+        { num: '433', name: 'BRENO', full: 'Asp. Of. Breno' ,
+            description: 'Manda a sua descricão'},
+        { num: '434', name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira' ,
+            description: 'Manda a sua descricão'},
+        { num: '435', name: 'FALCÃO', full: 'Asp. Of. Falcão' ,
+            description: 'Falcão: 32 anos, natural de São Luís. Sonho de criança e satisfação pessoal ser BM. Inspiração familiar para ser militar.'},
+        { num: '436', name: 'WELLISON', full: 'Asp. Of. Wellison' ,
+            description: 'Manda a sua descricão'},
+        { num: '437', name: 'RODOVALHO', full: 'Asp. Of. Rodovalho' ,
+            description: '32 anos Natural de São Luís. Sonho de criança e satisfação pessoal ser BM. Inspiração familiar para ser militar.'},
+        { num: '438', name: 'RONALD', full: 'Asp. Of. Ronald' ,
+            description: 'Manda a sua descricão'},
     ],
     
     imagensColetivas: [
@@ -226,16 +263,52 @@ const Aspirantes = {
                 card.className = 'aspirante-card';
                 card.setAttribute('data-num', asp.num);
                 card.setAttribute('data-index', index);
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                card.setAttribute('aria-expanded', 'false');
+                
+                const description = asp.description || '';
+                const hasDescription = description.trim().length > 0;
+                
+                if (hasDescription) {
+                    card.classList.add('aspirante-card--expandable');
+                }
+                
                 card.innerHTML = `
-                    <div class="aspirante-card__badge">
-                        <span class="aspirante-card__badge-label">Cad</span>
-                        <span class="aspirante-card__badge-number">${asp.num}</span>
+                    <div class="aspirante-card__content">
+                        <div class="aspirante-card__badge">
+                            <span class="aspirante-card__badge-label">Cad</span>
+                            <span class="aspirante-card__badge-number">${asp.num}</span>
+                        </div>
+                        <h3 class="aspirante-card__name">${asp.name}</h3>
+                        <p class="aspirante-card__title">Aspirante a Oficial</p>
                     </div>
-                    <h3 class="aspirante-card__name">${asp.name}</h3>
-                    <p class="aspirante-card__title">Aspirante a Oficial</p>
+                    ${hasDescription ? `
+                        <div class="aspirante-card__description">
+                            <p class="aspirante-card__description-text">${description}</p>
+                        </div>
+                    ` : ''}
                 `;
+                
+                // Adicionar event listener para expandir/recolher
+                if (hasDescription) {
+                    card.addEventListener('click', function() {
+                        this.classList.toggle('expanded');
+                        const isExpanded = this.classList.contains('expanded');
+                        this.setAttribute('aria-expanded', isExpanded.toString());
+                    });
+                    
+                    // Suporte para teclado (Enter e Space)
+                    card.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.click();
+                        }
+                    });
+                }
+                
                 grid.appendChild(card);
-                console.log(`✓ Card criado: ${asp.num} - ${asp.name}`);
+                console.log(`✓ Card criado: ${asp.num} - ${asp.name}${hasDescription ? ' (com descrição)' : ''}`);
             });
             
             grid.classList.remove('loading');
