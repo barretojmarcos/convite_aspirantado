@@ -64,7 +64,7 @@ Este projeto está configurado para ser publicado no GitHub Pages. Após fazer o
 
 ## 📄 Licença
 
-Este projeto é propriedade do Corpo de Bombeiros Militar do Maranhão.
+
 
 ## 👥 Créditos
 
