@@ -87,12 +87,12 @@ const CONFIG = {
     ],
     
     imagensColetivas: [
-        { src: 'sobrevivencia.png', title: 'Superacão', description: 'Momento de união e disciplina' },
+        { src: 'sobrevivencia.jpg', title: 'Superacão', description: 'Momento de união e disciplina' },
         { src: 'IMG_3234.png', title: 'Treinamento', description: 'Preparação para o serviço' },
-        { src: 'IMG_8251.png', title: 'Camaradagem', description: 'Laços forjados na formação' },
-        { src: 'Imagem1.png', title: 'Cerimonial', description: 'Tradição e respeito' },
-        { src: '4EC84959-BBEE-4665-B14E-E09FEC20FE40.jpeg', title: 'Unidade', description: 'Um só coração, uma só missão' },
-        { src: 'LS3_6937.jpeg', title: 'Compromisso', description: 'Dedicação ao serviço público' },
+        { src: 'travessia.png', title: 'Camaradagem', description: 'Laços forjados na formação' },
+        { src: 'IMG_8251.png', title: 'Cerimonial', description: 'Tradição e respeito' },
+        { src: 'selva.png', title: 'Unidade', description: 'Um só coração, uma só missão' },
+        { src: 'espadim.png', title: 'Compromisso', description: 'Dedicação ao serviço público' },
     ],
     
     eventos: [
