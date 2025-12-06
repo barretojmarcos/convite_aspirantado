@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formatura 17ª Turma do Aspirantado do Corpo de Bombeiros Militar do Maranhão - 2025">
     <meta name="keywords" content="CBMMA, Bombeiros, Maranhão, Formatura, Aspirantado, 17ª Turma">
-    <title>Aspirantado 17ª Turma - CBMMA 2026</title>
+    <title>Aspirantado 17ª Turma - CBMMA 2025</title>
     
     <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
     </script>
     
     <!-- CSS Customizado -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-stone-50 text-cbm-dark font-sans antialiased overflow-x-hidden">
 
@@ -46,10 +46,10 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
         <div class="navbar__container">
             <div class="navbar__brand">
-                <img src="ABM-logo melhorado .png" alt="Logo CBMMA" class="navbar__logo" loading="eager">
+                <img src="assets/images/ABM-logo melhorado .png" alt="Logo CBMMA" class="navbar__logo" loading="eager">
                 <div class="navbar__brand-text">
                     <span class="navbar__brand-title">CBMMA</span>
-                    <span class="navbar__brand-subtitle">Aspirantado - 17ª Turma - 2026</span>
+                    <span class="navbar__brand-subtitle">Aspirantado - 17ª Turma - 2025</span>
                 </div>
             </div>
             
@@ -70,7 +70,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero" aria-label="Seção principal">
         <div class="hero__background">
-            <img src="principal.jpeg" alt="Formação da 17ª Turma" class="hero__image" loading="eager">
+            <img src="assets/images/principal.JPG" alt="Formação da 17ª Turma" class="hero__image" loading="eager">
             <div class="hero__overlay"></div>
         </div>  
         
@@ -98,6 +98,29 @@
             <div class="hero__actions">
                 <a href="#coletiva" class="btn btn--primary">Conhecer a Turma</a>
                 <a href="#aspirantes" class="btn btn--secondary">Ver Aspirantes</a>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown" id="countdown">
+                <div class="countdown__label">Faltam</div>
+                <div class="countdown__grid">
+                    <div class="countdown__item">
+                        <div class="countdown__number" id="days">0</div>
+                        <div class="countdown__label-small">Dias</div>
+                    </div>
+                    <div class="countdown__item">
+                        <div class="countdown__number" id="hours">0</div>
+                        <div class="countdown__label-small">Horas</div>
+                    </div>
+                    <div class="countdown__item">
+                        <div class="countdown__number" id="minutes">0</div>
+                        <div class="countdown__label-small">Minutos</div>
+                    </div>
+                    <div class="countdown__item">
+                        <div class="countdown__number" id="seconds">0</div>
+                        <div class="countdown__label-small">Segundos</div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -193,7 +216,7 @@
 
             <footer class="section__footer">
                 <p class="section__footer-text">
-                    Corpo de Bombeiros Militar do Maranhão • 17ª Turma de Oficiais • 2026
+                    Corpo de Bombeiros Militar do Maranhão • 17ª Turma de Oficiais • 2025
                 </p>
                 <p class="section__footer-motto">
                     "Aliennam vitam et bona salvare"
@@ -217,6 +240,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>

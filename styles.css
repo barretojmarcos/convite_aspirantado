@@ -611,6 +611,45 @@ img {
 
 .aspirante-card__content {
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aspirante-card__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto var(--spacing-md);
+    border: 3px solid var(--color-military-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-stone-700);
+}
+
+.aspirante-card__photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.aspirante-card__photo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    border: 3px solid var(--color-military-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-stone-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aspirante-card__photo-placeholder .material-symbols-outlined {
+    font-size: 3rem;
+    color: var(--color-stone-400);
 }
 
 .aspirante-card:hover:not(.expanded) {

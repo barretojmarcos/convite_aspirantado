@@ -98,24 +98,24 @@ const CONFIG = {
     eventos: [
         
         {
+            title: 'Culto Ecumênico',
+            date: { month: 'Dez', day: '20', time: '19:00' },
+            type: 'Religioso',
+            icon: 'church',
+            location: 'IEQ Península',
+            address: 'R. dos Gaviões, 344 - Ponta do Farol, São Luís - MA'
+        },
+        {
             title: 'Formatura Militar',
-            date: { month: 'Jan', day: '15', time: '17:00' },
+            date: { month: 'Dez', day: '22', time: '08:00' },
             type: 'Militar',
             icon: 'military_tech',
             location: 'Colégio Militar 2 de Julho',
             address: 'endereço do colégio, São Luís - MA'
         },
         {
-            title: 'Culto Ecumênico',
-            date: { month: 'Jan', day: '16', time: '19:00' },
-            type: 'Religioso',
-            icon: 'church',
-            location: 'Igreja da Sé',
-            address: 'Av. Pedro II, Centro Histórico, São Luís - MA'
-        },
-        {
             title: 'Baile de Gala',
-            date: { month: 'Jan', day: '17', time: '22:00' },
+            date: { month: 'Dez', day: '22', time: '22:00' },
             type: 'Social',
             icon: 'celebration',
             location: 'Ximenes Pallace',
@@ -266,7 +266,7 @@ const Aspirantes = {
             
             CONFIG.aspirantes.forEach((asp, index) => {
                 const card = document.createElement('div');
-                card.className = 'aspirante-card';
+            card.className = 'aspirante-card';
                 card.setAttribute('data-num', asp.num);
                 card.setAttribute('data-index', index);
                 card.setAttribute('tabindex', '0');
@@ -280,14 +280,26 @@ const Aspirantes = {
                     card.classList.add('aspirante-card--expandable');
                 }
                 
-                card.innerHTML = `
+                const photo = asp.photo || '';
+                const hasPhoto = photo.trim().length > 0;
+                
+            card.innerHTML = `
                     <div class="aspirante-card__content">
-                        <div class="aspirante-card__badge">
-                            <span class="aspirante-card__badge-label">Cad</span>
-                            <span class="aspirante-card__badge-number">${asp.num}</span>
-                        </div>
-                        <h3 class="aspirante-card__name">${asp.name}</h3>
-                        <p class="aspirante-card__title">Aspirante a Oficial</p>
+                        ${hasPhoto ? `
+                            <div class="aspirante-card__photo">
+                                <img src="${photo}" alt="Foto de ${asp.name}" class="aspirante-card__photo-img" loading="lazy">
+                            </div>
+                        ` : `
+                            <div class="aspirante-card__photo-placeholder">
+                                <span class="material-symbols-outlined">person</span>
+                            </div>
+                        `}
+                <div class="aspirante-card__badge">
+                    <span class="aspirante-card__badge-label">Cad</span>
+                    <span class="aspirante-card__badge-number">${asp.num}</span>
+                </div>
+                <h3 class="aspirante-card__name">${asp.name}</h3>
+                <p class="aspirante-card__title">Aspirante a Oficial</p>
                     </div>
                     ${hasDescription ? `
                         <div class="aspirante-card__description">
@@ -313,11 +325,11 @@ const Aspirantes = {
                     });
                 }
                 
-                grid.appendChild(card);
+            grid.appendChild(card);
                 console.log(`✓ Card criado: ${asp.num} - ${asp.name}${hasDescription ? ' (com descrição)' : ''}`);
-            });
-            
-            grid.classList.remove('loading');
+        });
+        
+        grid.classList.remove('loading');
             const cardsCriados = grid.querySelectorAll('.aspirante-card').length;
             console.log(`✓ Total renderizado: ${cardsCriados} cards de ${CONFIG.aspirantes.length} aspirantes`);
             
