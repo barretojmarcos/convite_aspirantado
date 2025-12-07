@@ -84,14 +84,14 @@
             <h1 class="hero__title">
                 Aspirantado<br>
                 <span style="display: block; height: 1.5rem;"></span>
-                <span class="hero__title-highlight">17ª Turma</span><br>
+                <span class="hero__title-highlight">17ª Turma - CFO BM</span><br>
                 <span class="hero__title-subtitle">Turma Governador Carlos Brandão</span>
             </h1>
             
             <blockquote class="hero__quote">
                 <p class="hero__quote-text">
                     "Ao ser declarado
-                    Aspirante a oficial do corpo de bombeiros militar do maranhao, assumo o compromisso de cumprir rigorosamente as ordens das autoridades a quem estiver subordinado e dedicar-me inteiramente ao serviço bombeiro militar, mesmo com o sacrifício da própria vida"
+                    Aspirante a oficial do corpo de bombeiros militar do Maranhão, assumo o compromisso de cumprir rigorosamente as ordens das autoridades a quem estiver subordinado e dedicar-me inteiramente ao serviço Bombeiro Militar, mesmo com o sacrifício da própria vida"
                 </p>
                 <cite class="hero__quote-cite">— Juramento do Aspirante a Oficial</cite>
             </blockquote>
@@ -236,6 +236,29 @@
             </p>
         </div>
     </footer>
+
+    <!-- Modal para Zoom de Imagens -->
+    <div class="modal" id="image-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modal-close" aria-label="Fechar modal">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <button class="modal__nav modal__nav--prev" id="modal-prev" aria-label="Imagem anterior">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="modal__nav modal__nav--next" id="modal-next" aria-label="Próxima imagem">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div class="modal__image-container">
+                <img id="modal-image" class="modal__image" src="" alt="">
+            </div>
+            <div class="modal__info">
+                <h3 id="modal-title" class="modal__title"></h3>
+                <p id="modal-description" class="modal__description"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

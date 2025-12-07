@@ -612,6 +612,204 @@ img {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.gallery__zoom-icon {
+    font-size: 2rem;
+    color: var(--color-white);
+    opacity: 0.9;
+    margin-top: var(--spacing-sm);
+    transition: transform var(--transition-base);
+}
+
+.gallery__item:hover .gallery__zoom-icon {
+    transform: scale(1.2);
+}
+
+.gallery__zoom-icon {
+    font-size: 2rem;
+    color: var(--color-white);
+    opacity: 0.9;
+    margin-top: var(--spacing-sm);
+    transition: transform var(--transition-base);
+}
+
+.gallery__item:hover .gallery__zoom-icon {
+    transform: scale(1.2);
+}
+
+/* ============================================
+   MODAL PARA ZOOM DE IMAGENS
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal__content {
+    position: relative;
+    z-index: 10000;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.modal__image-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal__image {
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.modal__info {
+    text-align: center;
+    color: var(--color-white);
+    max-width: 800px;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-military-gold-light);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-serif);
+}
+
+.modal__description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.modal__close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: all var(--transition-base);
+    z-index: 10001;
+}
+
+.modal__close:hover {
+    background: var(--color-fire-red);
+    border-color: var(--color-fire-red);
+    transform: rotate(90deg);
+}
+
+.modal__close .material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+.modal__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: all var(--transition-base);
+    z-index: 10001;
+}
+
+.modal__nav:hover {
+    background: var(--color-military-gold);
+    border-color: var(--color-military-gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal__nav--prev {
+    left: -4rem;
+}
+
+.modal__nav--next {
+    right: -4rem;
+}
+
+.modal__nav .material-symbols-outlined {
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .modal__content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .modal__close {
+        top: -2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .modal__nav {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .modal__nav--prev {
+        left: 0.5rem;
+    }
+    
+    .modal__nav--next {
+        right: 0.5rem;
+    }
+    
+    .modal__title {
+        font-size: 1.25rem;
+    }
+    
+    .modal__description {
+        font-size: 0.875rem;
+    }
+}
+
 /* ============================================
    ARTIGO
    ============================================ */

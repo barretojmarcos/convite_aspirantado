@@ -10,11 +10,11 @@
 const CONFIG = {
     aspirantes: [
         { num: '404', name: 'ANA TAVARES', full: 'Asp. Of. Ana Tavares', photo: 'assets/images/aspirantes/ana-tavares.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
         { num: '405', name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina', photo: 'assets/images/aspirantes/ana-carolina.jpg',
             description: 'Briguenta, com 1,20 metros de altura, Ana Carolina.'},
         { num: '406', name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos', photo: 'assets/images/aspirantes/dos-anjos.jpg',
-            description: 'Filho de Caxias-Ma, Anderson Dos Anjos trilhou o caminho da formação militar com dedicação e determinação, sempre em busca de seu sonho e de um futuro promissor na corporação.'},
+            description: 'Filho de Caxias-MA, Anderson Dos Anjos trilhou o caminho da formação militar com dedicação e determinação, sempre em busca de seu sonho e de um futuro promissor na corporação.'},
         { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon', photo: 'assets/images/aspirantes/mariana-guilhon.jpg',
             description: 'Filha de Bombeiro Militar, 24 anos, tem no estudo e dedicação a sua base para ser uma oficial.'},
         { num: '408', name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg',
@@ -39,25 +39,25 @@ const CONFIG = {
         },
         { num: '415', name: 'AMORIM', full: 'Asp. Of. Amorim', photo: 'assets/images/aspirantes/amorim.jpg',
             description: 'Cadete Amorim: Nascido em São Luís, 27 anos, graduado em Engenharia Elétrica pela Universidade Federal do Maranhão'},
-        { num: '416', name: 'PAULA GADANHO', full: 'Asp. Of. Paula Almeida', photo: 'assets/images/aspirantes/paula-gadanho.jpg',
-            description: 'Paula Gadanho, 24 anos, Paula tentou umas 5 vezes mas reprovou toda vez na corrida, impressionante. '
+        { num: '416', name: 'PAULA ALMEIDA', full: 'Asp. Of. Paula Almeida', photo: 'assets/images/aspirantes/paula-gadanho.jpg',
+            description: 'Paula Almeida, 24 anos, determinada e  '
         },
         { num: '417', name: 'GUSTAVO', full: 'Asp. Of. Gustavo', photo: 'assets/images/aspirantes/gustavo.jpg',
             description: 'Cadete Gustavo, 30 anos, nascido em São Luís. Fazer parte do Corpo de Bombeiros é uma grande satisfação, haja vista a credibilidade que a instituição possui perante toda a sociedade.'},
         { num: '418', name: 'PRADO', full: 'Asp. Of. Prado', photo: 'assets/images/aspirantes/prado.jpg',
             description: '...'},
         { num: '419', name: 'PIETRO', full: 'Asp. Of. Pietro', photo: 'assets/images/aspirantes/pietro.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
         { num: '420', name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza', photo: 'assets/images/aspirantes/felipe-souza.jpg',
             description: 'Felipe Carvalho de Souza, ludovicense nato, descobriu a vida militar aos 13 anos, quando ainda menino vestiu, pela primeira vez, o sonho de ser Bombeiro Mirim na mesma Academia onde hoje caminha como Cadete. Filho de mãe solteira, aprendeu cedo que a força nasce do amor e que ajudar o próximo é missão que não escolhe hora nem rosto. Encontrou na farda o caminho para servir, proteger e transformar vidas.' },
         { num: '421', name: 'DAMON', full: 'Asp. Of. Damon', photo: 'assets/images/aspirantes/damon.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
         { num: '422', name: 'GOMES', full: 'Asp. Of. Gomes', photo: 'assets/images/aspirantes/gomes.jpg',
             description: 'Gomes traz sorte para sua turma.'},
         { num: '423', name: 'TEIXEIRA', full: 'Asp. Of. Teixeira', photo: 'assets/images/aspirantes/teixeira.jpg',
             description: 'Teixeira'},
         { num: '424', name: 'EMERSON', full: 'Asp. Of. Emerson', photo: 'assets/images/aspirantes/emerson.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
         { num: '425', name: 'HENRIQUE COSTA', full: 'Asp. Of. Henrique Costa', photo: 'assets/images/aspirantes/henrique-costa.jpg',
             description: 'Cadete Henrique Costa: Nascido em São Luís – MA, no dia 21 de junho de 2005. Com 16 anos descobriu o CFO, e viu ali uma oportunidade de crescimento em uma profissão tão honrada. Hoje, depois de tudo, transformou o sonho em rotina.'},
         { num: '426', name: 'TAINAM', full: 'Asp. Of. Tainam', photo: 'assets/images/aspirantes/tainam.jpg',
@@ -72,7 +72,7 @@ const CONFIG = {
         { num: '431', name: 'LUCAS CUNHA', full: 'Asp. Of. Lucas Cunha', photo: 'assets/images/aspirantes/lucas-cunha.jpg',
             description: 'Sem comentários.'},
         { num: '432', name: 'JULYENE', full: 'Asp. Of. Julyene', photo: 'assets/images/aspirantes/julyene.jpg',
-            description: 'Por viver no Anjo da Guarda, Juluyene teve que virar especialista em Artes Marciais, para se proteger do crime, hoje aplica todo o seu conhecimento para o bem da sociedade.'},
+            description: 'Por viver no Anjo da Guarda, Julyene teve que virar especialista em Artes Marciais, para se proteger do crime, hoje aplica todo o seu conhecimento para o bem da sociedade.'},
         { num: '433', name: 'BRENO', full: 'Asp. Of. Breno', photo: 'assets/images/aspirantes/breno.jpg',
             description: 'Abacaxi'},
         { num: '434', name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg',
@@ -80,15 +80,15 @@ const CONFIG = {
         { num: '435', name: 'FALCÃO', full: 'Asp. Of. Falcão', photo: 'assets/images/aspirantes/falcao.jpg',
             description: 'Falcão: 32 anos, natural de São Luís. Sonho de criança e satisfação pessoal ser BM. Inspiração familiar para ser militar.'},
         { num: '436', name: 'WELLISON', full: 'Asp. Of. Wellison', photo: 'assets/images/aspirantes/wellison.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
         { num: '437', name: 'RODOVALHO', full: 'Asp. Of. Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg',
             description: 'Cadete Rodovalho, 38 anos, natural de Jataí-GO. Foi Policial Militar do Estado do Maranhão antes de realizar o grande sonho de passar no CFO BM.'},
         { num: '438', name: 'RONALD', full: 'Asp. Of. Ronald', photo: 'assets/images/aspirantes/ronald.jpg',
-            description: 'Manda a sua descricão'},
+            description: 'Mande a sua descrição'},
     ],
     
     imagensColetivas: [
-        { src: 'assets/images/sobrevivencia.jpg', title: 'Superacão', description: 'Momento de união e disciplina' },
+        { src: 'assets/images/sobrevivencia.jpg', title: 'Superação', description: 'Momento de união e disciplina' },
         { src: 'assets/images/principal2.jpeg', title: 'Realização', description: 'Realização do sonho' },
         { src: 'assets/images/travessia.png', title: 'Camaradagem', description: 'Laços forjados na formação' },
         { src: 'assets/images/cerimonial.jpg', title: 'Cerimonial', description: 'Tradição e respeito' },
@@ -122,7 +122,7 @@ const CONFIG = {
             date: { month: 'Dez', day: '22', time: '22:00' },
             type: 'Social',
             icon: 'celebration',
-            location: 'Ximenes Pallace',
+            location: 'Ximenes Palace',
             address: 'Rua da Vitória, 189, Turu, São Luís - MA'
         }
     ],
@@ -230,18 +230,119 @@ const Gallery = {
         const container = document.getElementById('gallery-coletiva');
         if (!container) return;
         
-        CONFIG.imagensColetivas.forEach(img => {
+        CONFIG.imagensColetivas.forEach((img, index) => {
             const item = document.createElement('div');
             item.className = 'gallery__item';
+            item.setAttribute('role', 'button');
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `Ver ${img.title} em tamanho maior`);
             item.innerHTML = `
                 <img src="${img.src}" alt="${img.title}" class="gallery__image" loading="lazy">
                 <div class="gallery__overlay">
                     <h3 class="gallery__title">${img.title}</h3>
                     <p class="gallery__description">${img.description}</p>
+                    <span class="material-symbols-outlined gallery__zoom-icon">zoom_in</span>
                 </div>
             `;
+            
+            // Adicionar event listener para abrir modal
+            item.addEventListener('click', () => {
+                this.openModal(index);
+            });
+            
+            // Suporte para teclado
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.openModal(index);
+                }
+            });
+            
             container.appendChild(item);
         });
+    },
+    
+    openModal(index) {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const prevBtn = document.getElementById('modal-prev');
+        const nextBtn = document.getElementById('modal-next');
+        
+        if (!modal) return;
+        
+        const currentImage = CONFIG.imagensColetivas[index];
+        
+        // Atualizar conteúdo do modal
+        modalImg.src = currentImage.src;
+        modalImg.alt = currentImage.title;
+        modalTitle.textContent = currentImage.title;
+        modalDescription.textContent = currentImage.description;
+        
+        // Atualizar índices de navegação
+        modal.dataset.currentIndex = index;
+        
+        // Habilitar/desabilitar botões
+        prevBtn.style.display = index === 0 ? 'none' : 'flex';
+        nextBtn.style.display = index === CONFIG.imagensColetivas.length - 1 ? 'none' : 'flex';
+        
+        // Mostrar modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Event listeners para navegação
+        prevBtn.onclick = () => {
+            if (index > 0) {
+                this.openModal(index - 1);
+            }
+        };
+        
+        nextBtn.onclick = () => {
+            if (index < CONFIG.imagensColetivas.length - 1) {
+                this.openModal(index + 1);
+            }
+        };
+        
+        // Fechar ao clicar no botão X ou no overlay
+        document.getElementById('modal-close').onclick = () => this.closeModal();
+        modal.querySelector('.modal__overlay').onclick = (e) => {
+            if (e.target === e.currentTarget) {
+                this.closeModal();
+            }
+        };
+        
+        // Fechar com ESC e navegação com setas
+        const keyHandler = (e) => {
+            if (e.key === 'Escape') {
+                this.closeModal();
+                document.removeEventListener('keydown', keyHandler);
+            } else if (e.key === 'ArrowLeft' && index > 0) {
+                e.preventDefault();
+                this.openModal(index - 1);
+            } else if (e.key === 'ArrowRight' && index < CONFIG.imagensColetivas.length - 1) {
+                e.preventDefault();
+                this.openModal(index + 1);
+            }
+        };
+        document.addEventListener('keydown', keyHandler);
+        
+        // Armazenar handler para remover quando fechar
+        modal.dataset.keyHandler = 'true';
+    },
+    
+    closeModal() {
+        const modal = document.getElementById('image-modal');
+        if (!modal) return;
+        
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Remover handlers de teclado se existirem
+        if (modal.dataset.keyHandler) {
+            // Os handlers serão removidos automaticamente quando o modal fechar
+            delete modal.dataset.keyHandler;
+        }
     }
 };
 
