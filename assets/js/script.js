@@ -123,7 +123,8 @@ const CONFIG = {
             type: 'Social',
             icon: 'celebration',
             location: 'Ximenes Palace',
-            address: 'Rua da Vitória, 189, Turu, São Luís - MA'
+            address: 'Rua da Vitória, 189, Turu, São Luís - MA',
+            dressCode: 'Traje: Esporte fino'
         }
     ],
     
@@ -481,6 +482,7 @@ const Events = {
                         <h3 class="event-card__title">${event.title}</h3>
                         <p class="event-card__info"><strong>Local:</strong> ${event.location}</p>
                         <p class="event-card__info"><strong>Endereço:</strong> ${event.address}</p>
+                        ${event.dressCode ? `<p class="event-card__info event-card__info--dress"><strong>${event.dressCode}</strong></p>` : ''}
                     </div>
                 </div>
             `;
