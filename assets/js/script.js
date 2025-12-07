@@ -239,10 +239,12 @@ const Gallery = {
             item.setAttribute('aria-label', `Ver ${img.title} em tamanho maior`);
             item.innerHTML = `
                 <img src="${img.src}" alt="${img.title}" class="gallery__image" loading="lazy">
+                <div class="gallery__zoom-badge" aria-hidden="true">
+                    <span class="material-symbols-outlined gallery__zoom-icon">zoom_in</span>
+                </div>
                 <div class="gallery__overlay">
                     <h3 class="gallery__title">${img.title}</h3>
                     <p class="gallery__description">${img.description}</p>
-                    <span class="material-symbols-outlined gallery__zoom-icon">zoom_in</span>
                 </div>
             `;
             
