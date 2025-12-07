@@ -18,7 +18,7 @@ const CONFIG = {
         { num: '407', name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon', photo: 'assets/images/aspirantes/mariana-guilhon.jpg',
             description: 'Filha de Bombeiro Militar, 24 anos, tem no estudo e dedicação a sua base para ser uma oficial.'},
         { num: '408', name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg',
-            description: 'Natural de Pedreiras, a Princesa do Mearim, um exemplo de esforço, dedicação e comprometimento para todos à sua volta.'},
+            description: 'Natural de Pedreiras, aluno do Projeto Social Garra. Após conhecer a profissão como bombeiro civil, fez de ser bombeiro militar a sua missão profissional, conquistando a aprovação com anos de esforço através dos estudos.'},
         { num: '409', name: 'DIONE', full: 'Asp. Of. Dione', photo: 'assets/images/aspirantes/dione.jpg',
             description: 'Da Vila Embratel para o CBMMA, Dione diz que pagou o preço da formação para ser uma oficial.'},
         { num: '410', name: 'MOREIRA', full: 'Asp. Of. Moreira', photo: 'assets/images/aspirantes/moreira.jpg',
@@ -49,7 +49,7 @@ const CONFIG = {
         { num: '419', name: 'PIETRO', full: 'Asp. Of. Pietro', photo: 'assets/images/aspirantes/pietro.jpg',
             description: 'Manda a sua descricão'},
         { num: '420', name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza', photo: 'assets/images/aspirantes/felipe-souza.jpg',
-            description: 'Felipe Souza é o exemplo de cadete e bombeiro militar, eficiente, dedicado e treinado em todos os aspectos da formação.' },
+            description: 'Felipe Carvalho de Souza, ludovicense nato, descobriu a vida militar aos 13 anos, quando ainda menino vestiu, pela primeira vez, o sonho de ser Bombeiro Mirim na mesma Academia onde hoje caminha como Cadete. Filho de mãe solteira, aprendeu cedo que a força nasce do amor e que ajudar o próximo é missão que não escolhe hora nem rosto. Encontrou na farda o caminho para servir, proteger e transformar vidas.' },
         { num: '421', name: 'DAMON', full: 'Asp. Of. Damon', photo: 'assets/images/aspirantes/damon.jpg',
             description: 'Manda a sua descricão'},
         { num: '422', name: 'GOMES', full: 'Asp. Of. Gomes', photo: 'assets/images/aspirantes/gomes.jpg',
@@ -76,13 +76,13 @@ const CONFIG = {
         { num: '433', name: 'BRENO', full: 'Asp. Of. Breno', photo: 'assets/images/aspirantes/breno.jpg',
             description: 'Abacaxi'},
         { num: '434', name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg',
-            description: 'O Comandante-Aluno do CFO, Gabriel Oliveira, o grande modelo de dedicação, esforço e comprometimento com a formação militar, o representante e líder da 17ªturma.'},
+            description: 'O Comandante-Aluno do CFO, Gabriel Oliveira, o grande modelo de dedicação, esforço e comprometimento com a formação militar, o representante e líder da Academia.'},
         { num: '435', name: 'FALCÃO', full: 'Asp. Of. Falcão', photo: 'assets/images/aspirantes/falcao.jpg',
             description: 'Falcão: 32 anos, natural de São Luís. Sonho de criança e satisfação pessoal ser BM. Inspiração familiar para ser militar.'},
         { num: '436', name: 'WELLISON', full: 'Asp. Of. Wellison', photo: 'assets/images/aspirantes/wellison.jpg',
             description: 'Manda a sua descricão'},
         { num: '437', name: 'RODOVALHO', full: 'Asp. Of. Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg',
-            description: '32 anos Natural de São Luís. Sonho de criança e satisfação pessoal ser BM. Inspiração familiar para ser militar.'},
+            description: 'Cadete Rodovalho, 38 anos, natural de Jataí-GO. Foi Policial Militar do Estado do Maranhão antes de realizar o grande sonho de passar no CFO BM.'},
         { num: '438', name: 'RONALD', full: 'Asp. Of. Ronald', photo: 'assets/images/aspirantes/ronald.jpg',
             description: 'Manda a sua descricão'},
     ],
@@ -535,7 +535,7 @@ const App = {
 // ============================================
 
 const Countdown = {
-    targetDate: new Date('2025-12-23T08:00:00'), // 22 de dezembro de 2025, 8:00 - Formatura Militar
+    targetDate: new Date('2025-12-22T08:00:00'), // 22 de dezembro de 2025, 8:00 - Formatura Militar
     
     init() {
         this.update();
