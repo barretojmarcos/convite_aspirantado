@@ -40,7 +40,7 @@ const CONFIG = {
         { num: '415', name: 'AMORIM', full: 'Asp. Of. Amorim', photo: 'assets/images/aspirantes/amorim.jpg',
             description: 'Cadete Amorim: Nascido em São Luís, 27 anos, graduado em Engenharia Elétrica pela Universidade Federal do Maranhão'},
         { num: '416', name: 'PAULA ALMEIDA', full: 'Asp. Of. Paula Almeida', photo: 'assets/images/aspirantes/paula-gadanho.jpg',
-            description: 'Paula Almeida, 24 anos, determinada e  '
+            description: 'Paula Almeida, 24 anos, determinada e inteligente, dedicou-se e cumpriu o sonho de ser Bombeiro Militar.'
         },
         { num: '417', name: 'GUSTAVO', full: 'Asp. Of. Gustavo', photo: 'assets/images/aspirantes/gustavo.jpg',
             description: 'Cadete Gustavo, 30 anos, nascido em São Luís. Fazer parte do Corpo de Bombeiros é uma grande satisfação, haja vista a credibilidade que a instituição possui perante toda a sociedade.'},
