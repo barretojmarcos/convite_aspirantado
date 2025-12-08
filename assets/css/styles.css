@@ -616,10 +616,16 @@ img {
     }
     
     .countdown__item {
-        padding: var(--spacing-xs);
+        padding: var(--spacing-xs) 2px;
         min-width: 0;
         overflow: hidden;
         box-sizing: border-box;
+        text-overflow: ellipsis;
+    }
+    
+    .countdown__item * {
+        max-width: 100%;
+        overflow: hidden;
     }
     
     .countdown__number {
