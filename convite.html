@@ -18,6 +18,7 @@
             font-weight: normal;
             font-style: normal;
             font-display: swap;
+            font-synthesis: none;
         }
         /* Reset e configurações básicas */
         * {
@@ -696,9 +697,20 @@
             margin-bottom: 6mm;
             text-transform: none;
             letter-spacing: 0.08em;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
             flex-shrink: 0;
+            background: transparent !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            display: inline-block;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .message-title::before {
+            background: transparent !important;
         }
         
         .message-title::after {
@@ -880,8 +892,11 @@
             letter-spacing: 0.05em;
             text-align: center;
             width: 100%;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
+            background: transparent !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
         
         .comasp-title::after {
