@@ -89,7 +89,7 @@ const CONFIG = {
     
     imagensColetivas: [
         { src: 'assets/images/sobrevivencia.jpg', title: 'Superação', description: 'Momento de união e disciplina' },
-        { src: 'assets/images/principal2.jpeg', title: 'Realização', description: 'Realização do sonho' },
+        { src: 'assets/images/principal4.jpg', title: 'Realização', description: 'Realização do sonho' },
         { src: 'assets/images/travessia.png', title: 'Camaradagem', description: 'Laços forjados na formação' },
         { src: 'assets/images/cerimonial.jpg', title: 'Cerimonial', description: 'Tradição e respeito' },
         { src: 'assets/images/selva.png', title: 'Unidade', description: 'Um só coração, uma só missão' },
