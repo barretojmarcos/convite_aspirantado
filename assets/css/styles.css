@@ -548,24 +548,38 @@ img {
 
 @media (max-width: 768px) {
     .countdown-section {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0;
     }
     
     .countdown {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
+        max-width: 100%;
+        margin: 0 var(--spacing-md);
+    }
+    
+    .countdown__label {
+        font-size: 0.875rem;
+        margin-bottom: var(--spacing-md);
     }
     
     .countdown__grid {
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
+        max-width: 100%;
+    }
+    
+    .countdown__item {
+        padding: var(--spacing-sm);
     }
     
     .countdown__number {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
     }
     
     .countdown__label-small {
-        font-size: 0.625rem;
+        font-size: 0.5rem;
     }
+}
     
     .hero__quote {
         max-width: 100%;
