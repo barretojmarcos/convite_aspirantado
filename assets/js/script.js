@@ -20,7 +20,7 @@ const CONFIG = {
         { num: '408', name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg',
             description: 'Natural de Pedreiras, aluno do Projeto Social Garra. Após conhecer a profissão como bombeiro civil, fez de ser bombeiro militar a sua missão profissional, conquistando a aprovação com anos de esforço através dos estudos.'},
         { num: '409', name: 'DIONE', full: 'Asp. Of. Dione', photo: 'assets/images/aspirantes/dione.jpg',
-            description: 'Da Vila Embratel para o CBMMA, Dione diz que pagou o preço da formação para ser uma oficial.'},
+            description: 'Aspirante Dione, 24 anos, nascido em São Luís, filho de bombeiro militar. Ser bombeiro militar é uma honra que inspira orgulho, um chamado nobre que exige mais do que uma profissão: é uma missão de amor e bravura.'},
         { num: '410', name: 'MOREIRA', full: 'Asp. Of. Moreira', photo: 'assets/images/aspirantes/moreira.jpg',
             description: 'Conquistando o sonho de ser cadete aos 19 anos, Moreira conquista a estrela de Aspirante aos 22 anos, um exemplo de esforço, estudo e comprometimento.'},
         { num: '411', name: 'EDLAURO', full: 'Asp. Of. Edlauro', photo: 'assets/images/aspirantes/edlauro.jpg',
@@ -74,7 +74,7 @@ const CONFIG = {
         { num: '432', name: 'JULYENE', full: 'Asp. Of. Julyene', photo: 'assets/images/aspirantes/julyene.jpg',
             description: 'Julyene é exemplo de empatia, dedicação e comprometimento, hoje aplica todo o seu conhecimento para o bem da sociedade.'},
         { num: '433', name: 'BRENO', full: 'Asp. Of. Breno', photo: 'assets/images/aspirantes/breno.jpg',
-            description: 'Abacaxi'},
+            description: 'Natural de Turiaçu–MA, Breno Tadeu de Oliveira de Souza vê no CBMMA a oportunidade de atuar em uma missão que vai além de si mesmo: contribuir para o bem-estar e a segurança do próximo. Formado em Educação Física pela UFMA, dedica-se ao aperfeiçoamento técnico-operacional e ao treinamento físico, buscando diariamente evoluir para servir com excelência e compromisso.'},
         { num: '434', name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg',
             description: 'O Comandante-Aluno do CFO, Gabriel Oliveira, o grande modelo de dedicação, esforço e comprometimento com a formação militar, o representante e líder da Academia.'},
         { num: '435', name: 'FALCÃO', full: 'Asp. Of. Falcão', photo: 'assets/images/aspirantes/falcao.jpg',
@@ -84,7 +84,7 @@ const CONFIG = {
         { num: '437', name: 'RODOVALHO', full: 'Asp. Of. Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg',
             description: 'Aspirante Rodovalho, 38 anos, natural de Jataí-GO. Foi Policial Militar do Estado do Maranhão antes de realizar o grande sonho de passar no CFO BM.'},
         { num: '438', name: 'RONALD', full: 'Asp. Of. Ronald', photo: 'assets/images/aspirantes/ronald.jpg',
-            description: 'O Aspirante Rondald foi policial militar do Estado do Maranhão por 11 anos, agora será um oficial passar no do Corpo de Bombeiros Militares do Maranhão.'},
+            description: 'Aspirante Ronald, 37 anos, Temente a Deus, e ama a Família. Foi Policial Militar, agora Oficial do Corpo de Bom Militar.'},
     ],
     
     imagensColetivas: [
@@ -358,6 +358,55 @@ const Aspirantes = {
         this.render();
     },
     
+    openPhotoModal(photoSrc, aspiranteName) {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const prevBtn = document.getElementById('modal-prev');
+        const nextBtn = document.getElementById('modal-next');
+        
+        if (!modal || !modalImg) return;
+        
+        // Ocultar botões de navegação para fotos individuais
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        
+        // Atualizar conteúdo do modal
+        modalImg.src = photoSrc;
+        modalImg.alt = `Foto de ${aspiranteName}`;
+        if (modalTitle) modalTitle.textContent = aspiranteName;
+        if (modalDescription) modalDescription.textContent = '';
+        
+        // Mostrar modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Fechar ao clicar no botão X ou no overlay
+        const closeBtn = document.getElementById('modal-close');
+        if (closeBtn) {
+            closeBtn.onclick = () => Gallery.closeModal();
+        }
+        
+        const overlay = modal.querySelector('.modal__overlay');
+        if (overlay) {
+            overlay.onclick = (e) => {
+                if (e.target === e.currentTarget) {
+                    Gallery.closeModal();
+                }
+            };
+        }
+        
+        // Fechar com ESC
+        const escHandler = (e) => {
+            if (e.key === 'Escape') {
+                Gallery.closeModal();
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
+    },
+    
     render() {
         const grid = document.getElementById('aspirantes-grid');
         if (!grid) {
@@ -394,7 +443,7 @@ const Aspirantes = {
                 card.innerHTML = `
                     <div class="aspirante-card__content">
                         ${hasPhoto ? `
-                            <div class="aspirante-card__photo">
+                            <div class="aspirante-card__photo" role="button" tabindex="0" aria-label="Ver foto de ${asp.name} em tamanho maior">
                                 <img src="${photo}" alt="Foto de ${asp.name}" class="aspirante-card__photo-img" loading="lazy" onerror="this.parentElement.outerHTML='<div class=\\'aspirante-card__photo-placeholder\\'><span class=\\'material-symbols-outlined\\'>person</span></div>'">
                             </div>
                         ` : `
@@ -416,9 +465,32 @@ const Aspirantes = {
                     ` : ''}
                 `;
                 
-                // Adicionar event listener para expandir/recolher
+                // Adicionar event listener para zoom na foto
+                if (hasPhoto) {
+                    const photoElement = card.querySelector('.aspirante-card__photo');
+                    if (photoElement) {
+                        photoElement.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            Aspirantes.openPhotoModal(photo, asp.name);
+                        });
+                        
+                        photoElement.addEventListener('keydown', function(e) {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                Aspirantes.openPhotoModal(photo, asp.name);
+                            }
+                        });
+                    }
+                }
+                
+                // Adicionar event listener para expandir/recolher (exceto quando clicar na foto)
                 if (hasDescription) {
-                    card.addEventListener('click', function() {
+                    card.addEventListener('click', function(e) {
+                        // Não expandir se clicar na foto
+                        if (e.target.closest('.aspirante-card__photo')) {
+                            return;
+                        }
                         this.classList.toggle('expanded');
                         const isExpanded = this.classList.contains('expanded');
                         this.setAttribute('aria-expanded', isExpanded.toString());
@@ -426,6 +498,9 @@ const Aspirantes = {
                     
                     // Suporte para teclado (Enter e Space)
                     card.addEventListener('keydown', function(e) {
+                        if (e.target.closest('.aspirante-card__photo')) {
+                            return;
+                        }
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
                             this.click();
