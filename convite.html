@@ -768,7 +768,7 @@
             align-items: center;
             justify-content: flex-start;
             text-align: center;
-            padding: 1mm 0.5mm;
+            padding: 0.8mm 0.5mm 1mm 0.5mm;
             border: 1.5px solid var(--color-military-gold);
             border-radius: 2px;
             background: rgba(255, 255, 255, 0.95);
@@ -819,16 +819,18 @@
         }
         
         .aspirante-full {
-            font-size: 4.5pt;
+            font-size: 4pt;
             color: var(--color-military-gold);
             margin-top: 0.2mm;
             font-weight: 400;
-            line-height: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.1;
+            white-space: normal;
+            overflow: visible;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
             width: 100%;
             padding: 0 0.5mm;
+            flex-shrink: 0;
         }
         
         /* Página COMASP */
@@ -1128,7 +1130,7 @@
                 <div class="event-section">
                     <div class="event-title">Baile de Gala</div>
                     <div class="event-date">22 de Dezembro de 2025</div>
-                    <div class="event-time">22:00 horas</div>
+                    <div class="event-time">21:00 horas</div>
                     <div class="event-location">Ximenes Palace</div>
                     <div class="event-address">Rua da Vitória, 189, Turu<br>São Luís - MA</div>
                     <div class="event-dresscode">
