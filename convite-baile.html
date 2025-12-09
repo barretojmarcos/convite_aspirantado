@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite - Formatura 17ª Turma CBMMA</title>
+    <title>Convite Baile de Gala - Formatura 17ª Turma CBMMA</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900&family=Montserrat:wght@400;500;700&family=Great+Vibes&family=Athelas:wght@400;700&display=swap" rel="stylesheet">
@@ -318,13 +318,16 @@
             font-style: italic;
         }
         
-        /* Grid de eventos para landscape */
+        /* Grid de eventos para landscape - ajustado para 1 coluna centralizada */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
             gap: 5mm;
             flex: 1;
             margin-bottom: 5mm;
+            max-width: 80mm;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* Seção de evento */
@@ -1104,28 +1107,10 @@
         <div class="page-content-wrapper">
             <div class="page-header">
                 <h1>Convite</h1>
-                <p>Temos a honra de convidar Vossa Senhoria para os eventos:</p>
+                <p>Temos a honra de convidar Vossa Senhoria para o evento:</p>
             </div>
             
             <div class="events-grid">
-                <!-- Culto Ecumênico -->
-                <div class="event-section">
-                    <div class="event-title">Culto Ecumênico</div>
-                    <div class="event-date">20 de Dezembro de 2025</div>
-                    <div class="event-time">19:00 horas</div>
-                    <div class="event-location">IEQ Península</div>
-                    <div class="event-address">R. dos Gaviões, 344 - Ponta do Farol<br>São Luís - MA</div>
-                </div>
-                
-                <!-- Formatura Militar -->
-                <div class="event-section">
-                    <div class="event-title">Formatura Militar</div>
-                    <div class="event-date">22 de Dezembro de 2025</div>
-                    <div class="event-time">08:00 horas</div>
-                    <div class="event-location">Colégio Militar 2 de Julho</div>
-                    <div class="event-address">Av. dos Franceses, S/N - Vila Palmeira<br>São Luís - MA</div>
-                </div>
-                
                 <!-- Baile de Gala -->
                 <div class="event-section">
                     <div class="event-title">Baile de Gala</div>

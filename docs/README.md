@@ -47,7 +47,7 @@ Para adicionar uma foto a um aspirante:
 {
     num: '413',
     name: 'IURY SOUSA',
-    full: 'Asp. Of. Iury Sousa',
+    full: 'ASP Iury Sousa',
     photo: 'assets/images/aspirantes/iury-sousa.jpg',  // Caminho da foto
     description: 'Descrição do aspirante...'
 }

@@ -1017,7 +1017,81 @@
             justify-content: center;
             padding: 3mm 0;
             min-height: 0;
-            overflow: hidden;
+            overflow: visible;
+            position: relative;
+        }
+        
+        /* Ornamentos decorativos ao redor da imagem */
+        .individual-aspirante-image-container::before,
+        .individual-aspirante-image-container::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Círculo decorativo externo */
+        .individual-aspirante-image-container::before {
+            width: 90mm;
+            height: 90mm;
+            border: 2px solid rgba(217, 119, 6, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.2);
+        }
+        
+        /* Padrão decorativo interno */
+        .individual-aspirante-image-container::after {
+            width: 100mm;
+            height: 100mm;
+            border: 1px dashed rgba(217, 119, 6, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        /* Container para ornamentos dos cantos */
+        .individual-aspirante-image-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Ornamentos nos cantos superiores */
+        .individual-aspirante-corner-top-left,
+        .individual-aspirante-corner-top-right {
+            position: absolute;
+            width: 25mm;
+            height: 25mm;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        /* Canto superior esquerdo */
+        .individual-aspirante-corner-top-left {
+            top: -8mm;
+            left: -8mm;
+            border-top: 3px solid var(--color-military-gold);
+            border-left: 3px solid var(--color-military-gold);
+            border-top-left-radius: 8px;
+            box-shadow: -2px -2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        /* Canto superior direito */
+        .individual-aspirante-corner-top-right {
+            top: -8mm;
+            right: -8mm;
+            border-top: 3px solid var(--color-military-gold);
+            border-right: 3px solid var(--color-military-gold);
+            border-top-right-radius: 8px;
+            box-shadow: 2px -2px 8px rgba(217, 119, 6, 0.4);
         }
         
         .individual-aspirante-image {
@@ -1028,7 +1102,189 @@
             object-fit: contain;
             border: 3px solid var(--color-military-gold);
             border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
+                        0 0 0 2px rgba(217, 119, 6, 0.2),
+                        inset 0 0 20px rgba(217, 119, 6, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ornamentos nos cantos inferiores usando elementos adicionais */
+        .individual-aspirante-corner-bottom-left,
+        .individual-aspirante-corner-bottom-right {
+            position: absolute;
+            width: 25mm;
+            height: 25mm;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        .individual-aspirante-corner-bottom-left {
+            bottom: -8mm;
+            left: -8mm;
+            border-bottom: 3px solid var(--color-military-gold);
+            border-left: 3px solid var(--color-military-gold);
+            border-bottom-left-radius: 8px;
+            box-shadow: -2px 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        .individual-aspirante-corner-bottom-right {
+            bottom: -8mm;
+            right: -8mm;
+            border-bottom: 3px solid var(--color-military-gold);
+            border-right: 3px solid var(--color-military-gold);
+            border-bottom-right-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        /* Linhas decorativas laterais */
+        .individual-aspirante-line-left,
+        .individual-aspirante-line-right {
+            position: absolute;
+            width: 15mm;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .individual-aspirante-line-left {
+            left: -20mm;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .individual-aspirante-line-right {
+            right: -20mm;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(to left, transparent, var(--color-military-gold), transparent);
+        }
+        
+        /* Símbolos decorativos nos cantos */
+        .individual-aspirante-corner-decoration {
+            position: absolute;
+            font-size: 10pt;
+            color: var(--color-military-gold);
+            opacity: 0.7;
+            z-index: 4;
+            pointer-events: none;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(217, 119, 6, 0.5);
+        }
+        
+        .individual-aspirante-corner-decoration-top-left {
+            top: -12mm;
+            left: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-top-right {
+            top: -12mm;
+            right: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-bottom-left {
+            bottom: -12mm;
+            left: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-bottom-right {
+            bottom: -12mm;
+            right: -12mm;
+        }
+        
+        /* Adicionar padrão de linhas decorativas */
+        .individual-aspirante-image {
+            position: relative;
+        }
+        
+        .individual-aspirante-image::before {
+            content: '';
+            position: absolute;
+            top: -5mm;
+            left: -5mm;
+            right: -5mm;
+            bottom: -5mm;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 12px;
+            z-index: -1;
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.2);
+        }
+        
+        .individual-aspirante-image::after {
+            content: '';
+            position: absolute;
+            top: -8mm;
+            left: -8mm;
+            right: -8mm;
+            bottom: -8mm;
+            border: 1px dashed rgba(217, 119, 6, 0.2);
+            border-radius: 15px;
+            z-index: -2;
+        }
+        
+        /* Padrões decorativos de fundo na página */
+        .page-individual-aspirante {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #2d2d2d 0%, #1c1917 100%);
+        }
+        
+        /* Efeito de brilho sutil nos ornamentos */
+        .individual-aspirante-corner-top-left {
+            animation: subtleGlowTopLeft 3s ease-in-out infinite;
+        }
+        
+        .individual-aspirante-corner-top-right {
+            animation: subtleGlowTopRight 3s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        
+        .individual-aspirante-corner-bottom-left {
+            animation: subtleGlowBottomLeft 3s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .individual-aspirante-corner-bottom-right {
+            animation: subtleGlowBottomRight 3s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes subtleGlowTopLeft {
+            0%, 100% {
+                box-shadow: -2px -2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: -2px -2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowTopRight {
+            0%, 100% {
+                box-shadow: 2px -2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: 2px -2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowBottomLeft {
+            0%, 100% {
+                box-shadow: -2px 2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: -2px 2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowBottomRight {
+            0%, 100% {
+                box-shadow: 2px 2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: 2px 2px 12px rgba(217, 119, 6, 0.6);
+            }
         }
         
         .individual-aspirante-info {
@@ -1165,40 +1421,40 @@
     <script>
         // Dados dos aspirantes
         const aspirantesData = {
-            '404': { name: 'ANA TAVARES', full: 'Asp. Of. Ana Tavares', photo: 'assets/images/aspirantes/ana-tavares.jpg' },
-            '405': { name: 'ANA CAROLINA', full: 'Asp. Of. Ana Carolina', photo: 'assets/images/aspirantes/ana-carolina.jpg' },
-            '406': { name: 'DOS ANJOS', full: 'Asp. Of. Dos Anjos', photo: 'assets/images/aspirantes/dos-anjos.jpg' },
-            '407': { name: 'MARIANA GUILHON', full: 'Asp. Of. Mariana Guilhon', photo: 'assets/images/aspirantes/mariana-guilhon.jpg' },
-            '408': { name: 'DANIEL BORGES', full: 'Asp. Of. Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg' },
-            '409': { name: 'DIONE', full: 'Asp. Of. Dione', photo: 'assets/images/aspirantes/dione.jpg' },
-            '410': { name: 'MOREIRA', full: 'Asp. Of. Moreira', photo: 'assets/images/aspirantes/moreira.jpg' },
-            '411': { name: 'EDLAURO', full: 'Asp. Of. Edlauro', photo: 'assets/images/aspirantes/edlauro.jpg' },
-            '412': { name: 'BARRETO', full: 'Asp. Of. Barreto', photo: 'assets/images/aspirantes/barreto.jpg' },
-            '413': { name: 'IURY SOUSA', full: 'Asp. Of. Iury Sousa', photo: 'assets/images/aspirantes/iury-sousa.jpg' },
-            '414': { name: 'DANIEL PEDRO', full: 'Asp. Of. Daniel Pedro', photo: 'assets/images/aspirantes/daniel-pedro.jpg' },
-            '415': { name: 'AMORIM', full: 'Asp. Of. Amorim', photo: 'assets/images/aspirantes/amorim.jpg' },
-            '416': { name: 'PAULA ALMEIDA', full: 'Asp. Of. Paula Almeida', photo: 'assets/images/aspirantes/paula-almeida.jpg' },
-            '417': { name: 'GUSTAVO', full: 'Asp. Of. Gustavo', photo: 'assets/images/aspirantes/gustavo.jpg' },
-            '418': { name: 'PRADO', full: 'Asp. Of. Prado', photo: 'assets/images/aspirantes/prado.jpg' },
-            '419': { name: 'PIETRO', full: 'Asp. Of. Pietro', photo: 'assets/images/aspirantes/pietro.jpg' },
-            '420': { name: 'FELIPE SOUZA', full: 'Asp. Of. Felipe Souza', photo: 'assets/images/aspirantes/felipe-souza.jpg' },
-            '421': { name: 'DAMON', full: 'Asp. Of. Damon', photo: 'assets/images/aspirantes/damon.jpg' },
-            '422': { name: 'GOMES', full: 'Asp. Of. Gomes', photo: 'assets/images/aspirantes/gomes.jpg' },
-            '423': { name: 'TEIXEIRA', full: 'Asp. Of. Teixeira', photo: 'assets/images/aspirantes/teixeira.jpg' },
-            '424': { name: 'EMERSON', full: 'Asp. Of. Emerson', photo: 'assets/images/aspirantes/emerson.jpg' },
-            '425': { name: 'HENRIQUE COSTA', full: 'Asp. Of. Henrique Costa', photo: 'assets/images/aspirantes/henrique-costa.jpg' },
-            '426': { name: 'TAINAM', full: 'Asp. Of. Tainam', photo: 'assets/images/aspirantes/tainam.jpg' },
-            '427': { name: 'LUÍS CÉSAR', full: 'Asp. Of. Luís César', photo: 'assets/images/aspirantes/luis-cesar.jpg' },
-            '429': { name: 'JULIANA COELHO', full: 'Asp. Of. Juliana Coelho', photo: 'assets/images/aspirantes/juliana-coelho.jpg' },
-            '430': { name: 'RAFAELA', full: 'Asp. Of. Rafaela', photo: 'assets/images/aspirantes/rafaela.jpg' },
-            '431': { name: 'LUCAS CUNHA', full: 'Asp. Of. Lucas Cunha', photo: 'assets/images/aspirantes/lucas-cunha.jpg' },
-            '432': { name: 'JULYENE', full: 'Asp. Of. Julyene', photo: 'assets/images/aspirantes/julyene.jpg' },
-            '433': { name: 'BRENO', full: 'Asp. Of. Breno', photo: 'assets/images/aspirantes/breno.jpg' },
-            '434': { name: 'GABRIEL OLIVEIRA', full: 'Asp. Of. Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg' },
-            '435': { name: 'FALCÃO', full: 'Asp. Of. Falcão', photo: 'assets/images/aspirantes/falcao.jpg' },
-            '436': { name: 'WELLISON', full: 'Asp. Of. Wellison', photo: 'assets/images/aspirantes/wellison.jpg' },
-            '437': { name: 'RODOVALHO', full: 'Asp. Of. Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg' },
-            '438': { name: 'RONALD', full: 'Asp. Of. Ronald', photo: 'assets/images/aspirantes/ronald.jpg' }
+            '404': { name: 'ANA TAVARES', full: 'ASP Ana Tavares', photo: 'assets/images/aspirantes/ana-tavares.jpg' },
+            '405': { name: 'ANA CAROLINA', full: 'ASP Ana Carolina', photo: 'assets/images/aspirantes/ana-carolina.jpg' },
+            '406': { name: 'DOS ANJOS', full: 'ASP Dos Anjos', photo: 'assets/images/aspirantes/dos-anjos.jpg' },
+            '407': { name: 'MARIANA GUILHON', full: 'ASP Mariana Guilhon', photo: 'assets/images/aspirantes/mariana-guilhon.jpg' },
+            '408': { name: 'DANIEL BORGES', full: 'ASP Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg' },
+            '409': { name: 'DIONE', full: 'ASP Dione', photo: 'assets/images/aspirantes/dione.jpg' },
+            '410': { name: 'MOREIRA', full: 'ASP Moreira', photo: 'assets/images/aspirantes/moreira.jpg' },
+            '411': { name: 'EDLAURO', full: 'ASP Edlauro', photo: 'assets/images/aspirantes/edlauro.jpg' },
+            '412': { name: 'BARRETO', full: 'ASP Barreto', photo: 'assets/images/aspirantes/barreto.jpg' },
+            '413': { name: 'IURY SOUSA', full: 'ASP Iury Sousa', photo: 'assets/images/aspirantes/iury-sousa.jpg' },
+            '414': { name: 'DANIEL PEDRO', full: 'ASP Daniel Pedro', photo: 'assets/images/aspirantes/daniel-pedro.jpg' },
+            '415': { name: 'AMORIM', full: 'ASP Amorim', photo: 'assets/images/aspirantes/amorim.jpg' },
+            '416': { name: 'PAULA ALMEIDA', full: 'ASP Paula Almeida', photo: 'assets/images/aspirantes/paula-almeida.jpg' },
+            '417': { name: 'GUSTAVO', full: 'ASP Gustavo', photo: 'assets/images/aspirantes/gustavo.jpg' },
+            '418': { name: 'PRADO', full: 'ASP Prado', photo: 'assets/images/aspirantes/prado.jpg' },
+            '419': { name: 'PIETRO', full: 'ASP Pietro', photo: 'assets/images/aspirantes/pietro.jpg' },
+            '420': { name: 'FELIPE SOUZA', full: 'ASP Felipe Souza', photo: 'assets/images/aspirantes/felipe-souza.jpg' },
+            '421': { name: 'DAMON', full: 'ASP Damon', photo: 'assets/images/aspirantes/damon.jpg' },
+            '422': { name: 'GOMES', full: 'ASP Gomes', photo: 'assets/images/aspirantes/gomes.jpg' },
+            '423': { name: 'TEIXEIRA', full: 'ASP Teixeira', photo: 'assets/images/aspirantes/teixeira.jpg' },
+            '424': { name: 'EMERSON', full: 'ASP Emerson', photo: 'assets/images/aspirantes/emerson.jpg' },
+            '425': { name: 'HENRIQUE COSTA', full: 'ASP Henrique Costa', photo: 'assets/images/aspirantes/henrique-costa.jpg' },
+            '426': { name: 'TAINAM', full: 'ASP Tainam', photo: 'assets/images/aspirantes/tainam.jpg' },
+            '427': { name: 'LUÍS CÉSAR', full: 'ASP Luís César', photo: 'assets/images/aspirantes/luis-cesar.jpg' },
+            '429': { name: 'JULIANA COELHO', full: 'ASP Juliana Coelho', photo: 'assets/images/aspirantes/juliana-coelho.jpg' },
+            '430': { name: 'RAFAELA', full: 'ASP Rafaela', photo: 'assets/images/aspirantes/rafaela.jpg' },
+            '431': { name: 'LUCAS CUNHA', full: 'ASP Lucas Cunha', photo: 'assets/images/aspirantes/lucas-cunha.jpg' },
+            '432': { name: 'JULYENE', full: 'ASP Julyene', photo: 'assets/images/aspirantes/julyene.jpg' },
+            '433': { name: 'BRENO', full: 'ASP Breno', photo: 'assets/images/aspirantes/breno.jpg' },
+            '434': { name: 'GABRIEL OLIVEIRA', full: 'ASP Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg' },
+            '435': { name: 'FALCÃO', full: 'ASP Falcão', photo: 'assets/images/aspirantes/falcao.jpg' },
+            '436': { name: 'WELLISON', full: 'ASP Wellison', photo: 'assets/images/aspirantes/wellison.jpg' },
+            '437': { name: 'RODOVALHO', full: 'ASP Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg' },
+            '438': { name: 'RONALD', full: 'ASP Ronald', photo: 'assets/images/aspirantes/ronald.jpg' }
         };
         
         function updateAspiranteImage() {
@@ -1303,7 +1559,19 @@
                 <option value="438">438 - RONALD</option>
             </select>
             <div class="individual-aspirante-image-container">
-                <img id="aspirante-image" src="" alt="Aspirante" class="individual-aspirante-image" style="display: none;">
+                <div class="individual-aspirante-image-wrapper">
+                    <div class="individual-aspirante-corner-decoration individual-aspirante-corner-decoration-top-left">◆</div>
+                    <div class="individual-aspirante-corner-decoration individual-aspirante-corner-decoration-top-right">◆</div>
+                    <div class="individual-aspirante-corner-decoration individual-aspirante-corner-decoration-bottom-left">◆</div>
+                    <div class="individual-aspirante-corner-decoration individual-aspirante-corner-decoration-bottom-right">◆</div>
+                    <div class="individual-aspirante-corner-top-left"></div>
+                    <div class="individual-aspirante-corner-top-right"></div>
+                    <div class="individual-aspirante-corner-bottom-left"></div>
+                    <div class="individual-aspirante-corner-bottom-right"></div>
+                    <div class="individual-aspirante-line-left"></div>
+                    <div class="individual-aspirante-line-right"></div>
+                    <img id="aspirante-image" src="" alt="Aspirante" class="individual-aspirante-image" style="display: none;">
+                </div>
             </div>
             <div class="individual-aspirante-info" id="aspirante-info" style="display: none;">
                 <div class="individual-aspirante-number" id="aspirante-number"></div>
@@ -1436,103 +1704,103 @@
             <img src="assets/images/aspirantes/ana-tavares.jpg" alt="Ana Tavares" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">404</div>
             <div class="aspirante-name">ANA TAVARES</div>
-            <div class="aspirante-full">Asp. Of. Ana Tavares</div>
+            <div class="aspirante-full">ASP Ana Tavares</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/ana-carolina.jpg" alt="Ana Carolina" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">405</div>
             <div class="aspirante-name">ANA CAROLINA</div>
-            <div class="aspirante-full">Asp. Of. Ana Carolina</div>
+            <div class="aspirante-full">ASP Ana Carolina</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/dos-anjos.jpg" alt="Dos Anjos" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">406</div>
             <div class="aspirante-name">DOS ANJOS</div>
-            <div class="aspirante-full">Asp. Of. Dos Anjos</div>
+            <div class="aspirante-full">ASP Dos Anjos</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/mariana-guilhon.jpg" alt="Mariana Guilhon" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">407</div>
             <div class="aspirante-name">MARIANA GUILHON</div>
-            <div class="aspirante-full">Asp. Of. Mariana Guilhon</div>
+            <div class="aspirante-full">ASP Mariana Guilhon</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/daniel-borges.jpg" alt="Daniel Borges" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">408</div>
             <div class="aspirante-name">DANIEL BORGES</div>
-            <div class="aspirante-full">Asp. Of. Daniel Borges</div>
+            <div class="aspirante-full">ASP Daniel Borges</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/dione.jpg" alt="Dione" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">409</div>
             <div class="aspirante-name">DIONE</div>
-            <div class="aspirante-full">Asp. Of. Dione</div>
+            <div class="aspirante-full">ASP Dione</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/moreira.jpg" alt="Moreira" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">410</div>
             <div class="aspirante-name">MOREIRA</div>
-            <div class="aspirante-full">Asp. Of. Moreira</div>
+            <div class="aspirante-full">ASP Moreira</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/edlauro.jpg" alt="Edlauro" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">411</div>
             <div class="aspirante-name">EDLAURO</div>
-            <div class="aspirante-full">Asp. Of. Edlauro</div>
+            <div class="aspirante-full">ASP Edlauro</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/barreto.jpg" alt="Barreto" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">412</div>
             <div class="aspirante-name">BARRETO</div>
-            <div class="aspirante-full">Asp. Of. Barreto</div>
+            <div class="aspirante-full">ASP Barreto</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/iury-sousa.jpg" alt="Iury Sousa" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">413</div>
             <div class="aspirante-name">IURY SOUSA</div>
-            <div class="aspirante-full">Asp. Of. Iury Sousa</div>
+            <div class="aspirante-full">ASP Iury Sousa</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/daniel-pedro.jpg" alt="Daniel Pedro" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">414</div>
             <div class="aspirante-name">DANIEL PEDRO</div>
-            <div class="aspirante-full">Asp. Of. Daniel Pedro</div>
+            <div class="aspirante-full">ASP Daniel Pedro</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/amorim.jpg" alt="Amorim" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">415</div>
             <div class="aspirante-name">AMORIM</div>
-            <div class="aspirante-full">Asp. Of. Amorim</div>
+            <div class="aspirante-full">ASP Amorim</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/paula-almeida.jpg" alt="Paula Almeida" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">416</div>
             <div class="aspirante-name">PAULA ALMEIDA</div>
-            <div class="aspirante-full">Asp. Of. Paula Almeida</div>
+            <div class="aspirante-full">ASP Paula Almeida</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/gustavo.jpg" alt="Gustavo" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">417</div>
             <div class="aspirante-name">GUSTAVO</div>
-            <div class="aspirante-full">Asp. Of. Gustavo</div>
+            <div class="aspirante-full">ASP Gustavo</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/prado.jpg" alt="Prado" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">418</div>
             <div class="aspirante-name">PRADO</div>
-            <div class="aspirante-full">Asp. Of. Prado</div>
+            <div class="aspirante-full">ASP Prado</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/pietro.jpg" alt="Pietro" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">419</div>
             <div class="aspirante-name">PIETRO</div>
-            <div class="aspirante-full">Asp. Of. Pietro</div>
+            <div class="aspirante-full">ASP Pietro</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/felipe-souza.jpg" alt="Felipe Souza" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">420</div>
             <div class="aspirante-name">FELIPE SOUZA</div>
-            <div class="aspirante-full">Asp. Of. Felipe Souza</div>
+            <div class="aspirante-full">ASP Felipe Souza</div>
         </div>
     </div>
     
@@ -1542,103 +1810,103 @@
             <img src="assets/images/aspirantes/damon.jpg" alt="Damon" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">421</div>
             <div class="aspirante-name">DAMON</div>
-            <div class="aspirante-full">Asp. Of. Damon</div>
+            <div class="aspirante-full">ASP Damon</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/gomes.jpg" alt="Gomes" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">422</div>
             <div class="aspirante-name">GOMES</div>
-            <div class="aspirante-full">Asp. Of. Gomes</div>
+            <div class="aspirante-full">ASP Gomes</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/teixeira.jpg" alt="Teixeira" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">423</div>
             <div class="aspirante-name">TEIXEIRA</div>
-            <div class="aspirante-full">Asp. Of. Teixeira</div>
+            <div class="aspirante-full">ASP Teixeira</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/emerson.jpg" alt="Emerson" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">424</div>
             <div class="aspirante-name">EMERSON</div>
-            <div class="aspirante-full">Asp. Of. Emerson</div>
+            <div class="aspirante-full">ASP Emerson</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/henrique-costa.jpg" alt="Henrique Costa" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">425</div>
             <div class="aspirante-name">HENRIQUE COSTA</div>
-            <div class="aspirante-full">Asp. Of. Henrique Costa</div>
+            <div class="aspirante-full">ASP Henrique Costa</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/tainam.jpg" alt="Tainam" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">426</div>
             <div class="aspirante-name">TAINAM</div>
-            <div class="aspirante-full">Asp. Of. Tainam</div>
+            <div class="aspirante-full">ASP Tainam</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/luis-cesar.jpg" alt="Luís César" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">427</div>
             <div class="aspirante-name">LUÍS CÉSAR</div>
-            <div class="aspirante-full">Asp. Of. Luís César</div>
+            <div class="aspirante-full">ASP Luís César</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/juliana-coelho.jpg" alt="Juliana Coelho" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">429</div>
             <div class="aspirante-name">JULIANA COELHO</div>
-            <div class="aspirante-full">Asp. Of. Juliana Coelho</div>
+            <div class="aspirante-full">ASP Juliana Coelho</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/rafaela.jpg" alt="Rafaela" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">430</div>
             <div class="aspirante-name">RAFAELA</div>
-            <div class="aspirante-full">Asp. Of. Rafaela</div>
+            <div class="aspirante-full">ASP Rafaela</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/lucas-cunha.jpg" alt="Lucas Cunha" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">431</div>
             <div class="aspirante-name">LUCAS CUNHA</div>
-            <div class="aspirante-full">Asp. Of. Lucas Cunha</div>
+            <div class="aspirante-full">ASP Lucas Cunha</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/julyene.jpg" alt="Julyene" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">432</div>
             <div class="aspirante-name">JULYENE</div>
-            <div class="aspirante-full">Asp. Of. Julyene</div>
+            <div class="aspirante-full">ASP Julyene</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/breno.jpg" alt="Breno" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">433</div>
             <div class="aspirante-name">BRENO</div>
-            <div class="aspirante-full">Asp. Of. Breno</div>
+            <div class="aspirante-full">ASP Breno</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/gabriel-oliveira.jpg" alt="Gabriel Oliveira" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">434</div>
             <div class="aspirante-name">GABRIEL OLIVEIRA</div>
-            <div class="aspirante-full">Asp. Of. Gabriel Oliveira</div>
+            <div class="aspirante-full">ASP Gabriel Oliveira</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/falcao.jpg" alt="Falcão" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">435</div>
             <div class="aspirante-name">FALCÃO</div>
-            <div class="aspirante-full">Asp. Of. Falcão</div>
+            <div class="aspirante-full">ASP Falcão</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/wellison.jpg" alt="Wellison" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">436</div>
             <div class="aspirante-name">WELLISON</div>
-            <div class="aspirante-full">Asp. Of. Wellison</div>
+            <div class="aspirante-full">ASP Wellison</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/rodovalho.jpg" alt="Rodovalho" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">437</div>
             <div class="aspirante-name">RODOVALHO</div>
-            <div class="aspirante-full">Asp. Of. Rodovalho</div>
+            <div class="aspirante-full">ASP Rodovalho</div>
         </div>
         <div class="aspirante-card">
             <img src="assets/images/aspirantes/ronald.jpg" alt="Ronald" class="aspirante-photo" onerror="this.style.display='none';">
             <div class="aspirante-number">438</div>
             <div class="aspirante-name">RONALD</div>
-            <div class="aspirante-full">Asp. Of. Ronald</div>
+            <div class="aspirante-full">ASP Ronald</div>
         </div>
     </div>
     
