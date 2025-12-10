@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Individual - Formatura 17ª Turma CBMMA</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900&family=Montserrat:wght@400;500;700&family=Great+Vibes&family=Athelas:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Font Face para Anthoni Signature */
+        @font-face {
+            font-family: 'Anthoni Signature';
+            src: url('fonts/AnthoniSignature.woff2') format('woff2'),
+                 url('fonts/AnthoniSignature.woff') format('woff'),
+                 url('fonts/AnthoniSignature.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+            font-synthesis: none;
+        }
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A5 landscape;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Ajustar para considerar margens padrão do navegador na impressão */
+        @media print {
+            @page {
+                size: A5 landscape;
+                margin: 0;
+            }
+        }
+        
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--color-cream);
+            color: #1c1917;
+        }
+        
+        /* Cores do tema */
+        :root {
+            --color-fire-red: #7f1d1d;
+            --color-fire-bright: #b91c1c;
+            --color-military-gold: #d97706;
+            --color-military-gold-light: #fbbf24;
+            --color-cbm-dark: #1c1917;
+            --color-white: #ffffff;
+            --color-cream: #f5e8d8;
+            --color-paper: #f8f0e8;
+        }
+        
+        /* Página individual */
+        .page {
+            width: 210mm;
+            height: 148.5mm;
+            min-height: 148.5mm;
+            max-height: 148.5mm;
+            background: var(--color-paper);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            padding: 10mm 10mm 10mm 18mm; /* Top, Right, Bottom, Left - margem maior à esquerda para encadernação */
+            box-sizing: border-box;
+        }
+        
+        
+        
+        /* Ornamentos decorativos nas bordas */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid var(--color-military-gold);
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .page::after {
+            content: '';
+            position: absolute;
+            top: 5mm;
+            left: 5mm;
+            right: 5mm;
+            bottom: 5mm;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 4px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Linhas decorativas */
+        .page-decorative-line {
+            position: absolute;
+            background: var(--color-military-gold);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .decorative-line-top {
+            top: 12mm;
+            left: 12mm;
+            right: 12mm;
+            height: 1px;
+            opacity: 0.3;
+        }
+        
+        .decorative-line-bottom {
+            bottom: 12mm;
+            left: 12mm;
+            right: 12mm;
+            height: 1px;
+            opacity: 0.3;
+        }
+        
+        /* Ornamentos nos cantos */
+        .page-corner {
+            position: absolute;
+            width: 20mm;
+            height: 20mm;
+            border: 1px solid var(--color-military-gold);
+            z-index: 1;
+        }
+        
+        .corner-top-left {
+            top: 8mm;
+            left: 8mm;
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 8px;
+        }
+        
+        .corner-top-right {
+            top: 8mm;
+            right: 8mm;
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 8px;
+        }
+        
+        .corner-bottom-left {
+            bottom: 8mm;
+            left: 8mm;
+            border-right: none;
+            border-top: none;
+            border-bottom-left-radius: 8px;
+        }
+        
+        .corner-bottom-right {
+            bottom: 8mm;
+            right: 8mm;
+            border-left: none;
+            border-top: none;
+            border-bottom-right-radius: 8px;
+        }
+        
+        /* Página de capa */
+        .page-cover {
+            background: transparent;
+            color: var(--color-white);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10mm;
+            position: relative;
+        }
+        
+        .cover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            z-index: 0;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            margin-bottom: 8mm;
+            z-index: 2;
+        }
+        
+        .logo-container img {
+            max-width: 50mm;
+            height: auto;
+        }
+        
+        .cover-title {
+            font-family: 'Merriweather', serif;
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 4mm;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            z-index: 2;
+        }
+        
+        .cover-subtitle {
+            font-size: 12pt;
+            font-weight: 400;
+            margin-bottom: 6mm;
+            color: var(--color-military-gold-light);
+            z-index: 2;
+        }
+        
+        .cover-highlight {
+            font-family: 'Merriweather', serif;
+            font-size: 20pt;
+            font-weight: 900;
+            background: linear-gradient(to right, #b45309, #fbbf24, #f59e0b, #d97706);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 6mm 0;
+            z-index: 2;
+            line-height: 1.3;
+        }
+        
+        .cover-highlight span {
+            display: block;
+            margin-top: 2mm;
+            font-size: 14pt;
+        }
+        
+        .cover-date {
+            font-size: 11pt;
+            margin-top: 8mm;
+            padding-top: 6mm;
+            border-top: 2px solid var(--color-military-gold);
+            z-index: 2;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Página de informações */
+        .page-content {
+            background: var(--color-paper);
+            color: var(--color-cbm-dark);
+            flex-direction: column;
+        }
+        
+        .page-content-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4mm;
+            border-bottom: 3px solid var(--color-military-gold);
+            padding-bottom: 2mm;
+        }
+        
+        .page-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 15pt;
+            font-weight: 700;
+            color: var(--color-fire-red);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 2mm;
+            position: relative;
+            padding-bottom: 2mm;
+        }
+        
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50mm;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+        }
+        
+        .page-header p {
+            font-size: 10pt;
+            color: var(--color-cbm-dark);
+            letter-spacing: 0.05em;
+            margin-top: 4mm;
+            font-style: italic;
+        }
+        
+        /* Grid de eventos para landscape */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5mm;
+            flex: 1;
+            margin-bottom: 5mm;
+        }
+        
+        /* Seção de evento */
+        .event-section {
+            padding: 6mm;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.05) 0%, rgba(217, 119, 6, 0.02) 100%);
+            border-left: 3px solid var(--color-military-gold);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        
+        .event-title {
+            font-family: 'Merriweather', serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--color-fire-red);
+            margin-bottom: 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .event-title::before {
+            content: '◆';
+            color: var(--color-military-gold);
+            font-size: 10pt;
+            font-weight: normal;
+        }
+        
+        .event-date {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--color-cbm-dark);
+            margin-bottom: 3mm;
+            letter-spacing: 0.05em;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .event-time {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--color-military-gold);
+            margin-bottom: 3mm;
+            letter-spacing: 0.03em;
+        }
+        
+        .event-location {
+            font-size: 9pt;
+            font-weight: 600;
+            color: var(--color-cbm-dark);
+            margin-bottom: 2mm;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        
+        .event-address {
+            font-size: 8pt;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 2mm;
+        }
+        
+        .event-dresscode {
+            font-size: 8pt;
+            font-style: italic;
+            color: var(--color-military-gold);
+            margin-top: auto;
+            padding-top: 2mm;
+            border-top: 1px solid rgba(217, 119, 6, 0.3);
+        }
+        
+        /* Imagens decorativas */
+        .decorative-image {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .decorative-image-left {
+            left: 0;
+            bottom: 0;
+            max-width: 40%;
+            height: auto;
+        }
+        
+        .decorative-image-right {
+            right: 0;
+            bottom: 0;
+            max-width: 40%;
+            height: auto;
+        }
+        
+        .decorative-image-center {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            max-width: 50%;
+            height: auto;
+        }
+        
+        /* Juramento - Estilizado e Elegante */
+        .oath-section {
+            padding: 5mm 5mm;
+            background: linear-gradient(135deg, rgba(127, 29, 29, 0.03) 0%, rgba(217, 119, 6, 0.05) 100%);
+            border: 2px solid var(--color-military-gold);
+            border-radius: 6px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            margin: 3mm 0;
+        }
+        
+        .oath-section::before {
+            content: '"';
+            position: absolute;
+            top: -3mm;
+            left: 6mm;
+            font-family: 'Merriweather', serif;
+            font-size: 36pt;
+            color: var(--color-military-gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .oath-section::after {
+            content: '"';
+            position: absolute;
+            bottom: -5mm;
+            right: 6mm;
+            font-family: 'Merriweather', serif;
+            font-size: 36pt;
+            color: var(--color-military-gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .oath-title {
+            font-family: 'Merriweather', serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--color-fire-red);
+            margin-bottom: 4mm;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            position: relative;
+            padding-bottom: 2mm;
+        }
+        
+        .oath-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40mm;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+        }
+        
+        .oath-text {
+            font-family: 'Merriweather', serif;
+            font-size: 9pt;
+            line-height: 1.7;
+            font-style: italic;
+            color: var(--color-cbm-dark);
+            margin-bottom: 3mm;
+            letter-spacing: 0.03em;
+            text-align: justify;
+            padding: 0 2mm;
+        }
+        
+        .oath-cite {
+            font-size: 8pt;
+            color: var(--color-military-gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 2mm;
+            font-style: normal;
+        }
+        
+        /* Informações adicionais */
+        .info-section {
+            padding: 4mm;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.03) 0%, rgba(217, 119, 6, 0.01) 100%);
+            border-left: 3px solid var(--color-military-gold);
+            border-radius: 4px;
+            font-size: 8.5pt;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            margin-top: 2mm;
+            margin-bottom: 2mm;
+        }
+        
+        .info-section h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--color-fire-red);
+            margin-bottom: 2mm;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .info-section p {
+            margin: 0;
+        }
+        
+        /* Footer */
+        .page-footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 2mm;
+            border-top: 2px solid var(--color-military-gold);
+            font-size: 8pt;
+            color: var(--color-cbm-dark);
+            letter-spacing: 0.05em;
+        }
+        
+        .page-footer p {
+            margin: 1mm 0;
+        }
+        
+        .page-footer p strong {
+            color: var(--color-fire-red);
+            font-weight: 700;
+        }
+        
+        /* Folha de rosto */
+        .page-title {
+            background: transparent;
+            position: relative;
+        }
+        
+        .title-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            z-index: 0;
+        }
+        
+        .title-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10mm;
+        }
+        
+        /* Página de contato/agradecimento */
+        .page-thanks {
+            background: linear-gradient(135deg, var(--color-fire-red) 0%, #991b1b 100%);
+            color: var(--color-white);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .page-thanks::before {
+            border-color: rgba(251, 191, 36, 0.5);
+        }
+        
+        .thanks-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 5mm;
+        }
+        
+        .thanks-title {
+            font-family: 'Merriweather', serif;
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 6mm;
+        }
+        
+        .thanks-text {
+            font-size: 10pt;
+            line-height: 1.6;
+            margin-bottom: 5mm;
+        }
+        
+        .thanks-motto {
+            font-family: 'Merriweather', serif;
+            font-size: 12pt;
+            font-style: italic;
+            color: var(--color-military-gold-light);
+            margin-top: 6mm;
+            padding-top: 6mm;
+        
+        }
+        
+        .thanks-motto-translation {
+            font-size: 9pt;
+            margin-top: 2mm;
+            opacity: 0.9;
+        }
+        
+        /* Páginas de fotos da turma */
+        .page-photos {
+            background: var(--color-paper);
+            padding: 8mm;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 6mm;
+            overflow: hidden;
+        }
+        
+        .photo-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+        
+        /* Layout customizado para colagem do Moreira */
+        .page-photos-moreira {
+            background: var(--color-paper);
+            padding: 8mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 6mm;
+            overflow: hidden;
+        }
+        
+        .photo-container-left {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo-container-right {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-row: span 2;
+        }
+        
+        /* Página de mensagem inicial */
+        .page-message {
+            background: var(--color-paper);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8mm 10mm 8mm 10mm;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .message-content {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .message-title {
+            font-family: 'Anthoni Signature', 'Great Vibes', cursive;
+            font-size: 28pt;
+            font-weight: normal;
+            color: var(--color-fire-red);
+            margin-bottom: 6mm;
+            text-transform: none;
+            letter-spacing: 0.08em;
+            position: relative;
+            flex-shrink: 0;
+            background: transparent !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            display: inline-block;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .message-title::before {
+            background: transparent !important;
+        }
+        
+        .message-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50mm;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+        }
+        
+        .message-text {
+            font-size: 10pt;
+            line-height: 1.8;
+            color: var(--color-cbm-dark);
+            text-align: justify;
+            margin-bottom: 4mm;
+            letter-spacing: 0.03em;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .message-text p {
+            margin-bottom: 3mm;
+        }
+        
+        .message-signature {
+            font-size: 9pt;
+            font-style: italic;
+            color: var(--color-cbm-dark);
+            margin-top: auto;
+            text-align: right;
+            letter-spacing: 0.04em;
+            padding-top: 3mm;
+            border-top: 1px solid rgba(217, 119, 6, 0.2);
+            flex-shrink: 0;
+        }
+        
+        /* Páginas de aspirantes em grid */
+        .page-aspirantes-grid {
+            background: var(--color-paper);
+            padding: 8mm 6mm 6mm 6mm; /* Top, Right, Bottom, Left - ajustado para respeitar borda decorativa (5mm) + margem extra */
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2mm;
+            overflow: hidden;
+        }
+        
+        .aspirante-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 0.8mm 0.5mm 1mm 0.5mm;
+            border: 1.5px solid var(--color-military-gold);
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.95);
+            overflow: visible;
+            min-height: 0;
+            height: 100%;
+        }
+        
+        .aspirante-photo {
+            width: 100%;
+            max-width: 100%;
+            height: 20mm;
+            object-fit: cover;
+            border: 1px solid var(--color-military-gold);
+            border-radius: 1px;
+            margin-bottom: 0.8mm;
+            display: block;
+            flex-shrink: 0;
+        }
+        
+        .aspirante-number {
+            font-size: 5.5pt;
+            font-weight: 700;
+            color: var(--color-fire-red);
+            margin-bottom: 0.2mm;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        
+        .aspirante-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6pt;
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            width: 100%;
+            padding: 0 0.5mm;
+            flex: 1;
+            display: block;
+            text-align: center;
+            margin-top: 0.5mm;
+            min-height: auto;
+        }
+        
+        .aspirante-full {
+            font-size: 4pt;
+            color: var(--color-military-gold);
+            margin-top: 0.2mm;
+            font-weight: 400;
+            line-height: 1.1;
+            white-space: normal;
+            overflow: visible;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            width: 100%;
+            padding: 0 0.5mm;
+            flex-shrink: 0;
+        }
+        
+        /* Página COMASP */
+        .page-comasp {
+            background: var(--color-paper);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8mm 10mm 10mm 10mm;
+            position: relative;
+        }
+        
+        .comasp-content {
+            max-width: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            justify-content: flex-start;
+            width: 100%;
+            position: relative;
+            padding-bottom: 45mm; /* Espaço para a imagem no bottom */
+        }
+        
+        .comasp-image-wrapper {
+            position: absolute;
+            bottom: 0mm;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .comasp-image {
+            width: auto;
+            height: 100mm;
+            max-width: 480mm;
+            object-fit: contain;
+        }
+        
+        .comasp-text-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-start;
+            z-index: 2;
+        }
+        
+        .comasp-title {
+            font-family: 'Anthoni Signature', 'Great Vibes', cursive;
+            font-size: 24pt;
+            font-weight: normal;
+            color: var(--color-fire-red);
+            margin-bottom: 4mm;
+            text-transform: none;
+            letter-spacing: 0.05em;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            background: transparent !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        .comasp-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50mm;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+        }
+        
+        .comasp-text {
+            font-family: 'Athelas', serif;
+            font-size: 9pt;
+            line-height: 1.7;
+            color: var(--color-cbm-dark);
+            text-align: justify;
+            margin-bottom: 3mm;
+            letter-spacing: 0.02em;
+        }
+        
+        .comasp-text p {
+            margin-bottom: 2mm;
+        }
+        
+        .comasp-signature {
+            font-family: 'Athelas', serif;
+            font-size: 8pt;
+            font-style: italic;
+            color: var(--color-cbm-dark);
+            margin-top: auto;
+            text-align: right;
+            width: 100%;
+            padding-top: 2mm;
+            border-top: 1px solid rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.03em;
+        }
+        
+        .comasp-signature p {
+            margin: 1mm 0;
+        }
+        
+        /* Página de foto individual do aspirante */
+        .page-individual-aspirante {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1c1917 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8mm;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-individual-aspirante::before {
+            border-color: rgba(217, 119, 6, 0.5);
+        }
+        
+        .page-individual-aspirante::after {
+            border-color: rgba(217, 119, 6, 0.2);
+        }
+        
+        .individual-aspirante-decorative {
+            display: block;
+            margin: 4mm auto 0 auto;
+            max-width: 40mm;
+            max-height: 40mm;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 1;
+            z-index: 1;
+            pointer-events: none;
+            filter: brightness(1.2);
+        }
+        
+        .individual-aspirante-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        .individual-aspirante-selector {
+            margin-bottom: 5mm;
+            z-index: 10;
+            padding: 6px 12px;
+            font-size: 12px;
+            border: 2px solid var(--color-military-gold);
+            border-radius: 5px;
+            background: white;
+            color: var(--color-cbm-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+        
+        .individual-aspirante-selector:hover {
+            border-color: var(--color-fire-red);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .individual-aspirante-image-container {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3mm 0;
+            min-height: 0;
+            overflow: visible;
+            position: relative;
+        }
+        
+        /* Ornamentos decorativos ao redor da imagem */
+        .individual-aspirante-image-container::before,
+        .individual-aspirante-image-container::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Círculo decorativo externo */
+        .individual-aspirante-image-container::before {
+            width: 90mm;
+            height: 90mm;
+            border: 2px solid rgba(217, 119, 6, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.2);
+        }
+        
+        /* Padrão decorativo interno */
+        .individual-aspirante-image-container::after {
+            width: 100mm;
+            height: 100mm;
+            border: 1px dashed rgba(217, 119, 6, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        /* Container para ornamentos dos cantos */
+        .individual-aspirante-image-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Ornamentos nos cantos superiores */
+        .individual-aspirante-corner-top-left,
+        .individual-aspirante-corner-top-right {
+            position: absolute;
+            width: 25mm;
+            height: 25mm;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        /* Canto superior esquerdo */
+        .individual-aspirante-corner-top-left {
+            top: -8mm;
+            left: -8mm;
+            border-top: 3px solid var(--color-military-gold);
+            border-left: 3px solid var(--color-military-gold);
+            border-top-left-radius: 8px;
+            box-shadow: -2px -2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        /* Canto superior direito */
+        .individual-aspirante-corner-top-right {
+            top: -8mm;
+            right: -8mm;
+            border-top: 3px solid var(--color-military-gold);
+            border-right: 3px solid var(--color-military-gold);
+            border-top-right-radius: 8px;
+            box-shadow: 2px -2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        .individual-aspirante-image {
+            max-width: 70mm;
+            max-height: 85mm;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 3px solid var(--color-military-gold);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
+                        0 0 0 2px rgba(217, 119, 6, 0.2),
+                        inset 0 0 20px rgba(217, 119, 6, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ornamentos nos cantos inferiores usando elementos adicionais */
+        .individual-aspirante-corner-bottom-left,
+        .individual-aspirante-corner-bottom-right {
+            position: absolute;
+            width: 25mm;
+            height: 25mm;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        .individual-aspirante-corner-bottom-left {
+            bottom: -8mm;
+            left: -8mm;
+            border-bottom: 3px solid var(--color-military-gold);
+            border-left: 3px solid var(--color-military-gold);
+            border-bottom-left-radius: 8px;
+            box-shadow: -2px 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        .individual-aspirante-corner-bottom-right {
+            bottom: -8mm;
+            right: -8mm;
+            border-bottom: 3px solid var(--color-military-gold);
+            border-right: 3px solid var(--color-military-gold);
+            border-bottom-right-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        
+        /* Linhas decorativas laterais */
+        .individual-aspirante-line-left,
+        .individual-aspirante-line-right {
+            position: absolute;
+            width: 15mm;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-military-gold), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .individual-aspirante-line-left {
+            left: -20mm;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .individual-aspirante-line-right {
+            right: -20mm;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(to left, transparent, var(--color-military-gold), transparent);
+        }
+        
+        /* Símbolos decorativos nos cantos */
+        .individual-aspirante-corner-decoration {
+            position: absolute;
+            font-size: 10pt;
+            color: var(--color-military-gold);
+            opacity: 0.7;
+            z-index: 4;
+            pointer-events: none;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(217, 119, 6, 0.5);
+        }
+        
+        .individual-aspirante-corner-decoration-top-left {
+            top: -12mm;
+            left: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-top-right {
+            top: -12mm;
+            right: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-bottom-left {
+            bottom: -12mm;
+            left: -12mm;
+        }
+        
+        .individual-aspirante-corner-decoration-bottom-right {
+            bottom: -12mm;
+            right: -12mm;
+        }
+        
+        /* Adicionar padrão de linhas decorativas */
+        .individual-aspirante-image {
+            position: relative;
+        }
+        
+        .individual-aspirante-image::before {
+            content: '';
+            position: absolute;
+            top: -5mm;
+            left: -5mm;
+            right: -5mm;
+            bottom: -5mm;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 12px;
+            z-index: -1;
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.2);
+        }
+        
+        .individual-aspirante-image::after {
+            content: '';
+            position: absolute;
+            top: -8mm;
+            left: -8mm;
+            right: -8mm;
+            bottom: -8mm;
+            border: 1px dashed rgba(217, 119, 6, 0.2);
+            border-radius: 15px;
+            z-index: -2;
+        }
+        
+        /* Padrões decorativos de fundo na página */
+        .page-individual-aspirante {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #2d2d2d 0%, #1c1917 100%);
+        }
+        
+        /* Efeito de brilho sutil nos ornamentos */
+        .individual-aspirante-corner-top-left {
+            animation: subtleGlowTopLeft 3s ease-in-out infinite;
+        }
+        
+        .individual-aspirante-corner-top-right {
+            animation: subtleGlowTopRight 3s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        
+        .individual-aspirante-corner-bottom-left {
+            animation: subtleGlowBottomLeft 3s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .individual-aspirante-corner-bottom-right {
+            animation: subtleGlowBottomRight 3s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes subtleGlowTopLeft {
+            0%, 100% {
+                box-shadow: -2px -2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: -2px -2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowTopRight {
+            0%, 100% {
+                box-shadow: 2px -2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: 2px -2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowBottomLeft {
+            0%, 100% {
+                box-shadow: -2px 2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: -2px 2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        @keyframes subtleGlowBottomRight {
+            0%, 100% {
+                box-shadow: 2px 2px 8px rgba(217, 119, 6, 0.4);
+            }
+            50% {
+                box-shadow: 2px 2px 12px rgba(217, 119, 6, 0.6);
+            }
+        }
+        
+        .individual-aspirante-info {
+            margin-top: 3mm;
+            z-index: 1;
+            flex-shrink: 0;
+            width: 100%;
+            padding: 0 2mm;
+            overflow: hidden;
+        }
+        
+        .individual-aspirante-number {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--color-military-gold-light);
+            margin-bottom: 1.5mm;
+            line-height: 1.2;
+        }
+        
+        .individual-aspirante-name {
+            font-family: 'Merriweather', serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 2mm;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            line-height: 1.3;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        .individual-aspirante-full {
+            font-size: 10pt;
+            color: var(--color-military-gold-light);
+            font-style: italic;
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* Página final com imagem principal */
+        .page-final {
+            background: var(--color-white);
+            position: relative;
+        }
+        
+        .final-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Impressão */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm;
+                height: auto;
+            }
+            
+            /* Resetar todas as quebras de página primeiro */
+            * {
+                page-break-before: auto;
+                page-break-after: auto;
+                page-break-inside: auto;
+            }
+            
+            /* Aplicar quebras APENAS nas divs principais com classe "page" */
+            body > div.page {
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 210mm;
+                height: 147mm !important;
+                min-height: 147mm !important;
+                max-height: 147mm !important;
+                page-break-before: auto;
+                page-break-after: always;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Última página não deve ter quebra após */
+            body > div.page:last-of-type,
+            body > div.page.page-final {
+                page-break-after: auto !important;
+            }
+            
+            /* Garantir que elementos internos NUNCA causem quebras */
+            .page-content-wrapper,
+            .page-header,
+            .page-footer,
+            .message-content,
+            .comasp-content,
+            .comasp-image-wrapper,
+            .comasp-text-wrapper,
+            .thanks-content,
+            .events-grid,
+            .oath-section,
+            .info-section,
+            .individual-aspirante-wrapper,
+            .individual-aspirante-image-container {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* Esconder botão de imprimir */
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        @media screen {
+            .page {
+                margin: 10mm auto;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+    <script>
+        // Dados dos aspirantes
+        const aspirantesData = {
+            '404': { name: 'ANA TAVARES', full: 'ASP Ana Tavares', photo: 'assets/images/aspirantes/ana-tavares.jpg' },
+            '405': { name: 'ANA CAROLINA', full: 'ASP Ana Carolina', photo: 'assets/images/aspirantes/ana-carolina.jpg' },
+            '406': { name: 'DOS ANJOS', full: 'ASP Dos Anjos', photo: 'assets/images/aspirantes/dos-anjos.jpg' },
+            '407': { name: 'MARIANA GUILHON', full: 'ASP Mariana Guilhon', photo: 'assets/images/aspirantes/mariana-guilhon.jpg' },
+            '408': { name: 'DANIEL BORGES', full: 'ASP Daniel Borges', photo: 'assets/images/aspirantes/daniel-borges.jpg' },
+            '409': { name: 'DIONE', full: 'ASP Dione', photo: 'assets/images/aspirantes/dione.jpg' },
+            '410': { name: 'MOREIRA', full: 'ASP Moreira', photo: 'assets/images/aspirantes/moreira/moreira.jpg' },
+            '411': { name: 'EDLAURO', full: 'ASP Edlauro', photo: 'assets/images/aspirantes/edlauro.jpg' },
+            '412': { name: 'BARRETO', full: 'ASP Barreto', photo: 'assets/images/aspirantes/barreto.jpg' },
+            '413': { name: 'IURY SOUSA', full: 'ASP Iury Sousa', photo: 'assets/images/aspirantes/iury-sousa.jpg' },
+            '414': { name: 'DANIEL PEDRO', full: 'ASP Daniel Pedro', photo: 'assets/images/aspirantes/daniel-pedro.jpg' },
+            '415': { name: 'AMORIM', full: 'ASP Amorim', photo: 'assets/images/aspirantes/amorim.jpg' },
+            '416': { name: 'PAULA ALMEIDA', full: 'ASP Paula Almeida', photo: 'assets/images/aspirantes/paula-almeida.jpg' },
+            '417': { name: 'GUSTAVO', full: 'ASP Gustavo', photo: 'assets/images/aspirantes/gustavo.jpg' },
+            '418': { name: 'PRADO', full: 'ASP Prado', photo: 'assets/images/aspirantes/prado.jpg' },
+            '419': { name: 'PIETRO', full: 'ASP Pietro', photo: 'assets/images/aspirantes/pietro.jpg' },
+            '420': { name: 'FELIPE SOUZA', full: 'ASP Felipe Souza', photo: 'assets/images/aspirantes/felipe-souza.jpg' },
+            '421': { name: 'DAMON', full: 'ASP Damon', photo: 'assets/images/aspirantes/damon.jpg' },
+            '422': { name: 'GOMES', full: 'ASP Gomes', photo: 'assets/images/aspirantes/gomes.jpg' },
+            '423': { name: 'TEIXEIRA', full: 'ASP Teixeira', photo: 'assets/images/aspirantes/teixeira.jpg' },
+            '424': { name: 'EMERSON', full: 'ASP Emerson', photo: 'assets/images/aspirantes/emerson.jpg' },
+            '425': { name: 'HENRIQUE COSTA', full: 'ASP Henrique Costa', photo: 'assets/images/aspirantes/henrique-costa.jpg' },
+            '426': { name: 'TAINAM', full: 'ASP Tainam', photo: 'assets/images/aspirantes/tainam.jpg' },
+            '427': { name: 'LUÍS CÉSAR', full: 'ASP Luís César', photo: 'assets/images/aspirantes/luis-cesar.jpg' },
+            '429': { name: 'JULIANA COELHO', full: 'ASP Juliana Coelho', photo: 'assets/images/aspirantes/juliana-coelho.jpg' },
+            '430': { name: 'RAFAELA', full: 'ASP Rafaela', photo: 'assets/images/aspirantes/rafaela.jpg' },
+            '431': { name: 'LUCAS CUNHA', full: 'ASP Lucas Cunha', photo: 'assets/images/aspirantes/lucas-cunha.jpg' },
+            '432': { name: 'JULYENE', full: 'ASP Julyene', photo: 'assets/images/aspirantes/julyene.jpg' },
+            '433': { name: 'BRENO', full: 'ASP Breno', photo: 'assets/images/aspirantes/breno.jpg' },
+            '434': { name: 'GABRIEL OLIVEIRA', full: 'ASP Gabriel Oliveira', photo: 'assets/images/aspirantes/gabriel-oliveira.jpg' },
+            '435': { name: 'FALCÃO', full: 'ASP Falcão', photo: 'assets/images/aspirantes/falcao.jpg' },
+            '436': { name: 'WELLISON', full: 'ASP Wellison', photo: 'assets/images/aspirantes/wellison.jpg' },
+            '437': { name: 'RODOVALHO', full: 'ASP Rodovalho', photo: 'assets/images/aspirantes/rodovalho.jpg' },
+            '438': { name: 'RONALD', full: 'ASP Ronald', photo: 'assets/images/aspirantes/ronald.jpg' }
+        };
+        
+        function updateAspiranteImage() {
+            const selector = document.getElementById('aspirante-selector');
+            const image = document.getElementById('aspirante-image');
+            const info = document.getElementById('aspirante-info');
+            const numberEl = document.getElementById('aspirante-number');
+            const nameEl = document.getElementById('aspirante-name');
+            const fullEl = document.getElementById('aspirante-full');
+            
+            const selectedNum = selector.value;
+            
+            if (selectedNum && aspirantesData[selectedNum]) {
+                const aspirante = aspirantesData[selectedNum];
+                image.src = aspirante.photo;
+                image.alt = aspirante.name;
+                image.style.display = 'block';
+                image.onerror = function() {
+                    this.style.display = 'none';
+                    alert('Imagem não encontrada para este aspirante.');
+                };
+                
+                numberEl.textContent = selectedNum;
+                nameEl.textContent = aspirante.name;
+                fullEl.textContent = aspirante.full;
+                info.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+                info.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Página 1: Capa -->
+    <div class="page page-title">
+        <img src="Convite/Folha de rosto.jpg" alt="Folha de Rosto" class="title-image">
+    </div>
+    
+    
+    <!-- Página 2: Folha de Rosto -->
+    <div class="page page-cover">
+        <img src="Convite/Capa.jpg" alt="Capa" class="cover-image">
+    </div>
+    
+    <!-- Página 3: Mensagem Inicial -->
+    <div class="page page-message">
+        <div class="message-content">
+            <div class="message-title">Mensagem Inicial</div>
+            <div class="message-text">
+                <p>É com imensa honra e satisfação que apresentamos a <strong>17ª Turma de Oficiais do Corpo de Bombeiros Militar do Maranhão</strong>, a Turma Governador Carlos Brandão.</p>
+                <p>Este convite representa muito mais que um documento; é o testemunho de uma jornada transformadora, marcada por dedicação, disciplina e compromisso com a missão de salvar vidas e proteger o povo maranhense.</p>
+                <p>Ao longo da formação, 34 aspirantes foram forjados no rigor da disciplina militar, no conhecimento técnico-operacional e na excelência do serviço público. Cada um deles carrega consigo não apenas a estrela de Aspirante, mas o compromisso inabalável de servir com honra, coragem e dedicação.</p>
+                <p>Neste momento histórico, convidamos Vossa Senhoria a compartilhar conosco a celebração desta conquista, que marca o início de uma nova etapa na vida desses profissionais, prontos para assumir posições de liderança e comando na corporação.</p>
+            </div>
+            <div class="message-signature">
+                <p><strong>17ª Turma - CFO BM</strong></p>
+                <p>Turma Governador Carlos Brandão</p>
+                <p>Dezembro de 2025</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Página 3.5: Foto Criança Moreira -->
+    <div class="page page-final">
+        <img src="assets/images/aspirantes/moreira/crianca-moreira.jpg" alt="Criança Moreira" class="final-image">
+    </div>
+    
+    <!-- Página 4: Foto Individual do Aspirante Moreira -->
+    <div class="page page-final">
+        <img src="assets/images/aspirantes/moreira/apresentacao-moreira.jpg" alt="Moreira Capa" class="final-image">
+    </div>
+    
+    <!-- Página 4.2: Agradecimentos do Moreira -->
+    <div class="page page-final">
+        <img src="assets/images/aspirantes/moreira/agradecimentos-moreira.jpg" alt="Agradecimentos Moreira" class="final-image">
+    </div>
+    
+    <!-- Página 4.5: Colagem de Fotos do Moreira -->
+    <div class="page page-photos-moreira">
+        <div class="photo-container-left">
+            <img src="assets/images/aspirantes/moreira/moreira2.jpg" alt="Moreira 2" class="photo-item">
+        </div>
+        <div class="photo-container-right">
+            <img src="assets/images/aspirantes/moreira/moreira5.jpg" alt="Moreira 4" class="photo-item">
+        </div>
+        <div class="photo-container-left">
+            <img src="assets/images/aspirantes/moreira/moreira4.jpg" alt="Moreira 3" class="photo-item">
+        </div>
+    </div>
+    
+    <!-- Página 5: Fotos da Turma - 1 -->
+    <div class="page page-photos">
+        <div class="photo-container">
+            <img src="assets/images/principal4.jpg" alt="Foto da Turma 1" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/sobrevivencia.jpg" alt="Foto da Turma 2" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/travessia.png" alt="Foto da Turma 3" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/FAD_4649.jpg" alt="Foto da Turma 4" class="photo-item">
+        </div>
+    </div>
+    
+    <!-- Página 6: Fotos da Turma - 2 -->
+    <div class="page page-photos">
+        <div class="photo-container">
+            <img src="assets/images/selva.png" alt="Foto da Turma 5" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/espadim.png" alt="Foto da Turma 6" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/maos.jpg" alt="Foto da Turma 7" class="photo-item">
+        </div>
+        <div class="photo-container">
+            <img src="assets/images/inicio.jpeg" alt="Foto da Turma 8" class="photo-item">
+        </div>
+    </div>
+    
+    <!-- Página 7: Informações dos Eventos -->
+    <div class="page page-content">
+        <img src="Convite/contorno-academia.png" alt="Academia" class="decorative-image decorative-image-left">
+        <img src="Convite/torre-de-treinamento.png" alt="Torre" class="decorative-image decorative-image-right">
+        
+        
+        <div class="page-content-wrapper">
+            <div class="page-header">
+                <h1>Convite</h1>
+                <p>Temos a honra de convidar Vossa Senhoria para os eventos:</p>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Culto Ecumênico -->
+                <div class="event-section">
+                    <div class="event-title">Culto Ecumênico</div>
+                    <div class="event-date">20 de Dezembro de 2025</div>
+                    <div class="event-time">19:00 horas</div>
+                    <div class="event-location">IEQ Monte Castelo</div>
+                    <div class="event-address">R. Raimundo Corrêa, 355 - Monte Castelo<br>São Luís - MA</div>
+                </div>
+                
+                <!-- Formatura Militar -->
+                <div class="event-section">
+                    <div class="event-title">Formatura Militar</div>
+                    <div class="event-date">22 de Dezembro de 2025</div>
+                    <div class="event-time">08:00 horas</div>
+                    <div class="event-location">Comando Geral do CBMMA</div>
+                    <div class="event-address">Avenida dos Portugueses – Bacanga<br>São Luís - MA</div>
+                </div>
+                
+                <!-- Baile de Gala -->
+                <div class="event-section">
+                    <div class="event-title">Baile de Gala</div>
+                    <div class="event-date">22 de Dezembro de 2025</div>
+                    <div class="event-time">21:00 horas</div>
+                    <div class="event-location">Ximenes Palace</div>
+                    <div class="event-address">Rua da Vitória, 189, Turu<br>São Luís - MA</div>
+                    <div class="event-dresscode">
+                        <strong>Traje:</strong> Esporte fino
+                    </div>
+                </div>
+            </div>
+            
+            <div class="page-footer">
+                
+                <p>Corpo de Bombeiros Militar do Maranhão</p>
+                <p>17ª Turma de Oficiais • 2025</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Página 4: Juramento -->
+    <div class="page page-content">
+        <img src="Convite/torre-de-treinamento.png" alt="Torre" class="decorative-image decorative-image-center">
+        <div class="page-content-wrapper">
+            <div class="page-header">
+                <h1>Juramento</h1>
+                <p>Compromisso da 17ª Turma</p>
+            </div>
+            
+            <div class="oath-section">
+                <div class="oath-title">Juramento do Aspirante a Oficial</div>
+                <div class="oath-text">
+                    "Ao ser declarado Aspirante a oficial do corpo de bombeiros militar do Maranhão, assumo o compromisso de cumprir rigorosamente as ordens das autoridades a quem estiver subordinado e dedicar-me inteiramente ao serviço Bombeiro Militar, mesmo com o sacrifício da própria vida"
+                </div>
+               
+            </div>
+            
+            <div class="info-section">
+                <h3>Sobre a Turma</h3>
+                <p>
+                    A 17ª Turma de Oficiais do Corpo de Bombeiros Militar do Maranhão marca um momento histórico na corporação, reunindo 34 profissionais que, após superarem todos os desafios da formação, estão prontos para assumir posições de comando e liderança, sempre com o compromisso de proteger vidas e patrimônio do povo maranhense.
+                </p>
+            </div>
+            
+            <div class="page-footer">
+                <p><strong>Lema da Corporação:</strong></p>
+                <p>"Aliennam vitam et bona salvare"</p>
+                <p style="font-size: 7pt; margin-top: 1mm;">Vidas alheias e riquezas salvar</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Página 1: Aspirantes - Grid 1 (17 aspirantes: 404-420) -->
+    <div class="page page-aspirantes-grid">
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/ana-tavares.jpg" alt="Ana Tavares" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">404</div>
+            <div class="aspirante-name">ANA TAVARES</div>
+            <div class="aspirante-full">ASP Ana Tavares</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/ana-carolina.jpg" alt="Ana Carolina" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">405</div>
+            <div class="aspirante-name">ANA CAROLINA</div>
+            <div class="aspirante-full">ASP Ana Carolina</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/dos-anjos.jpg" alt="Dos Anjos" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">406</div>
+            <div class="aspirante-name">DOS ANJOS</div>
+            <div class="aspirante-full">ASP Dos Anjos</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/mariana-guilhon.jpg" alt="Mariana Guilhon" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">407</div>
+            <div class="aspirante-name">MARIANA GUILHON</div>
+            <div class="aspirante-full">ASP Mariana Guilhon</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/daniel-borges.jpg" alt="Daniel Borges" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">408</div>
+            <div class="aspirante-name">DANIEL BORGES</div>
+            <div class="aspirante-full">ASP Daniel Borges</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/dione.jpg" alt="Dione" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">409</div>
+            <div class="aspirante-name">DIONE</div>
+            <div class="aspirante-full">ASP Dione</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/moreira/moreira.jpg" alt="Moreira" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">410</div>
+            <div class="aspirante-name">MOREIRA</div>
+            <div class="aspirante-full">ASP Moreira</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/edlauro.jpg" alt="Edlauro" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">411</div>
+            <div class="aspirante-name">EDLAURO</div>
+            <div class="aspirante-full">ASP Edlauro</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/barreto.jpg" alt="Barreto" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">412</div>
+            <div class="aspirante-name">BARRETO</div>
+            <div class="aspirante-full">ASP Barreto</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/iury-sousa.jpg" alt="Iury Sousa" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">413</div>
+            <div class="aspirante-name">IURY SOUSA</div>
+            <div class="aspirante-full">ASP Iury Sousa</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/daniel-pedro.jpg" alt="Daniel Pedro" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">414</div>
+            <div class="aspirante-name">DANIEL PEDRO</div>
+            <div class="aspirante-full">ASP Daniel Pedro</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/amorim.jpg" alt="Amorim" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">415</div>
+            <div class="aspirante-name">AMORIM</div>
+            <div class="aspirante-full">ASP Amorim</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/paula-almeida.jpg" alt="Paula Almeida" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">416</div>
+            <div class="aspirante-name">PAULA ALMEIDA</div>
+            <div class="aspirante-full">ASP Paula Almeida</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/gustavo.jpg" alt="Gustavo" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">417</div>
+            <div class="aspirante-name">GUSTAVO</div>
+            <div class="aspirante-full">ASP Gustavo</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/prado.jpg" alt="Prado" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">418</div>
+            <div class="aspirante-name">PRADO</div>
+            <div class="aspirante-full">ASP Prado</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/pietro.jpg" alt="Pietro" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">419</div>
+            <div class="aspirante-name">PIETRO</div>
+            <div class="aspirante-full">ASP Pietro</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/felipe-souza.jpg" alt="Felipe Souza" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">420</div>
+            <div class="aspirante-name">FELIPE SOUZA</div>
+            <div class="aspirante-full">ASP Felipe Souza</div>
+        </div>
+    </div>
+    
+    <!-- Página 2: Aspirantes - Grid 2 (17 aspirantes: 421-438, sem 428) -->
+    <div class="page page-aspirantes-grid">
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/damon.jpg" alt="Damon" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">421</div>
+            <div class="aspirante-name">DAMON</div>
+            <div class="aspirante-full">ASP Damon</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/gomes.jpg" alt="Gomes" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">422</div>
+            <div class="aspirante-name">GOMES</div>
+            <div class="aspirante-full">ASP Gomes</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/teixeira.jpg" alt="Teixeira" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">423</div>
+            <div class="aspirante-name">TEIXEIRA</div>
+            <div class="aspirante-full">ASP Teixeira</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/emerson.jpg" alt="Emerson" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">424</div>
+            <div class="aspirante-name">EMERSON</div>
+            <div class="aspirante-full">ASP Emerson</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/henrique-costa.jpg" alt="Henrique Costa" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">425</div>
+            <div class="aspirante-name">HENRIQUE COSTA</div>
+            <div class="aspirante-full">ASP Henrique Costa</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/tainam.jpg" alt="Tainam" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">426</div>
+            <div class="aspirante-name">TAINAM</div>
+            <div class="aspirante-full">ASP Tainam</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/luis-cesar.jpg" alt="Luís César" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">427</div>
+            <div class="aspirante-name">LUÍS CÉSAR</div>
+            <div class="aspirante-full">ASP Luís César</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/juliana-coelho.jpg" alt="Juliana Coelho" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">429</div>
+            <div class="aspirante-name">JULIANA COELHO</div>
+            <div class="aspirante-full">ASP Juliana Coelho</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/rafaela.jpg" alt="Rafaela" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">430</div>
+            <div class="aspirante-name">RAFAELA</div>
+            <div class="aspirante-full">ASP Rafaela</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/lucas-cunha.jpg" alt="Lucas Cunha" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">431</div>
+            <div class="aspirante-name">LUCAS CUNHA</div>
+            <div class="aspirante-full">ASP Lucas Cunha</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/julyene.jpg" alt="Julyene" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">432</div>
+            <div class="aspirante-name">JULYENE</div>
+            <div class="aspirante-full">ASP Julyene</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/breno.jpg" alt="Breno" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">433</div>
+            <div class="aspirante-name">BRENO</div>
+            <div class="aspirante-full">ASP Breno</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/gabriel-oliveira.jpg" alt="Gabriel Oliveira" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">434</div>
+            <div class="aspirante-name">GABRIEL OLIVEIRA</div>
+            <div class="aspirante-full">ASP Gabriel Oliveira</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/falcao.jpg" alt="Falcão" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">435</div>
+            <div class="aspirante-name">FALCÃO</div>
+            <div class="aspirante-full">ASP Falcão</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/wellison.jpg" alt="Wellison" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">436</div>
+            <div class="aspirante-name">WELLISON</div>
+            <div class="aspirante-full">ASP Wellison</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/rodovalho.jpg" alt="Rodovalho" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">437</div>
+            <div class="aspirante-name">RODOVALHO</div>
+            <div class="aspirante-full">ASP Rodovalho</div>
+        </div>
+        <div class="aspirante-card">
+            <img src="assets/images/aspirantes/ronald.jpg" alt="Ronald" class="aspirante-photo" onerror="this.style.display='none';">
+            <div class="aspirante-number">438</div>
+            <div class="aspirante-name">RONALD</div>
+            <div class="aspirante-full">ASP Ronald</div>
+        </div>
+    </div>
+    
+    <!-- Página 5: Agradecimentos -->
+    <div class="page page-thanks">
+        <img src="Convite/contorno-academia.png" alt="Academia" class="decorative-image decorative-image-left" style="opacity: 0.5;">
+        <img src="Convite/torre-de-treinamento.png" alt="Academia" class="decorative-image decorative-image-right" style="opacity: 0.5;">
+        <div class="thanks-content">
+            <div class="thanks-title" style="font-size: 16pt;"></div>
+            
+            <div class="thanks-text" style="font-size: 10pt; margin-bottom: 5mm;">
+                <p><strong>Deus</strong></p>
+                <p>Nossa proteção nas chamas, pela força nos momentos de exaustão e pela graça de chegarmos até aqui vivos e vitoriosos. Que Sua bênção continue a nos guiar em cada missão.</p>
+            </div>
+            
+            <div class="thanks-text" style="font-size: 10pt; margin-bottom: 5mm;">
+                <p><strong>Família</strong></p>
+                <p>Nossa retaguarda invisível. O apoio incondicional, as orações e o amor que nos sustentaram durante o internato e a formação. Vocês são nosso porto seguro.</p>
+            </div>
+            
+            <div class="thanks-text" style="font-size: 10pt; margin-bottom: 5mm;">
+                <p><strong>Instrutores</strong></p>
+                <p>Nosso exemplo, pela disciplina imposta e pelo conhecimento transmitido. Vossos ensinamentos salvarão vidas através de nossas mãos. Obrigado por nos preparar para o futuro.</p>
+            </div>
+            
+            <div class="thanks-motto" style="font-size: 12pt; margin-top: 6mm; padding-top: 6mm;">
+                "Aliennam vitam et bona salvare"
+            </div>
+            <div class="thanks-motto-translation" style="font-size: 9pt;">
+                Vidas alheias e riquezas salvar
+            </div>
+        </div>
+        
+        <div class="page-footer" style="border-top-color: rgba(251, 191, 36, 0.5); color: rgba(255, 255, 255, 0.9); font-size: 8pt;">
+            <p>Corpo de Bombeiros Militar do Maranhão</p>
+            <p>17ª Turma de Oficiais • 2025</p>
+        </div>
+    </div>
+    
+    <!-- Página Final: Imagem Principal -->
+    <div class="page page-final">
+        <img src="assets/images/principal4.jpg" alt="17ª Turma CBMMA" class="final-image">
+    </div>
+    <!-- Botão para imprimir (visível apenas na tela) -->
+    <div class="no-print" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button onclick="window.print()" style="
+            background: var(--color-fire-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            📄 Imprimir / Salvar PDF
+        </button>
+    </div>
+</body>
+</html>
+

@@ -106,16 +106,16 @@ const CONFIG = {
             date: { month: 'Dez', day: '20', time: '19:00' },
             type: 'Religioso',
             icon: 'church',
-            location: 'IEQ Península',
-            address: 'R. dos Gaviões, 344 - Ponta do Farol, São Luís - MA'
+            location: 'IEQ Monte Castelo',
+            address: 'R. Raimundo Corrêa, 355 - Monte Castelo, São Luís - MA'
         },
         {
             title: 'Formatura Militar',
             date: { month: 'Dez', day: '22', time: '08:00' },
             type: 'Militar',
             icon: 'military_tech',
-            location: 'Colégio Militar 2 de Julho',
-            address: 'Av. dos Franceses, S/N - Vila Palmeira, São Luís - MA'
+            location: 'Comando Geral do CBMMA',
+            address: 'Avenida dos Portugueses – Bacanga, São Luís - MA'
         },
         {
             title: 'Baile de Gala',
