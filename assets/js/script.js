@@ -103,11 +103,11 @@ const CONFIG = {
         
         {
             title: 'Culto Ecumênico',
-            date: { month: 'Dez', day: '20', time: '19:00' },
+            date: { month: 'Dez', day: '20', time: '18:30' },
             type: 'Religioso',
             icon: 'church',
-            location: 'IEQ Monte Castelo',
-            address: 'R. Raimundo Corrêa, 355 - Monte Castelo, São Luís - MA'
+            location: 'Igreja Nossa Senhora do Carmo',
+            address: 'Praça João Lisboa, 350 - Centro, São Luís - MA'
         },
         {
             title: 'Formatura Militar',
