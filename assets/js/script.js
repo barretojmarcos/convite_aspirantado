@@ -103,11 +103,11 @@ const CONFIG = {
         
         {
             title: 'Culto Ecumênico',
-            date: { month: 'Dez', day: '20', time: '18:30' },
+            date: { month: 'Dez', day: '20', time: '19:00' },
             type: 'Religioso',
             icon: 'church',
-            location: 'Igreja Nossa Senhora do Carmo',
-            address: 'Praça João Lisboa, 350 - Centro, São Luís - MA'
+            location: 'IEQ Península',
+            address: 'Av. dos Holandeses - Ponta D\'areia, São Luís'
         },
         {
             title: 'Formatura Militar',
